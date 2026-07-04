@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italia Data Factory — Dataset OCR italiano verificabile per AI e LLM</title>
+  <meta name="description" content="Pipeline automatica per trasformare documenti italiani in dataset verificabili, versionati e pronti per RAG, training e benchmark.">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="logo.png" alt="Francesco Faraone">
+    <h1>Italia Data Factory</h1>
+    <p class="tagline">Dataset OCR italiano verificabile per AI e LLM. Pipeline automatica per trasformare documenti italiani in dataset verificabili, versionati e pronti per RAG, training e benchmark.</p>
+    <div class="links">
+      <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Dataset pubblico ↗</a>
+      <a class="btn" href="https://github.com/francescofaraone/italia-data-factory">Codice (privato) ↗</a>
+    </div>
+  </div>
+
+  <!-- Problem -->
+  <section>
+    <h2>Il problema</h2>
+    <div class="problem">
+      <p>Molti progetti AI su documenti italiani falliscono non per il modello, ma per la filiera dati: fonti non tracciate, OCR non verificabile, licenze incerte, nessun checksum, nessuna versione riproducibile.</p>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section>
+    <h2>La soluzione</h2>
+    <p>IDF è una pipeline che produce, per ogni release:</p>
+    <ul class="features">
+      <li><div><strong>Provenienza tracciata</strong> — ogni record punta alla fonte originale con URI e SHA-256 del file sorgente.</div></li>
+      <li><div><strong>OCR verificabile</strong> — GLM-OCR come extractor primario su PDF complessi, con quality report per pagina.</div></li>
+      <li><div><strong>Manifest di fonti e diritti</strong> — licenza e obblighi di attribuzione per ogni risorsa.</div></li>
+      <li><div><strong>Checksum SHA-256</strong> — su ogni file della release, verificabili pubblicamente.</div></li>
+      <li><div><strong>Release notes e report di qualità</strong> — numeri reali di OCR quality, review e release gate.</div></li>
+      <li><div><strong>Indice RAG e valutazione di retrieval</strong> — con metriche (recall, MRR) oneste e fallimenti analizzati.</div></li>
+    </ul>
+  </section>
+
+  <!-- Public proof -->
+  <section>
+    <h2>Prova pubblica disponibile ora</h2>
+    <p>Dataset campione su Hugging Face (CC BY 4.0, pubblico e ispezionabile):</p>
+    <pre><code>https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample</code></pre>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="value">4</div>
+        <div class="label">Documenti OCR (PDF Regione Puglia)</div>
+      </div>
+      <div class="metric">
+        <div class="value">80</div>
+        <div class="label">Record open data comunali</div>
+      </div>
+      <div class="metric">
+        <div class="value">20</div>
+        <div class="label">Q/A grounded curate a mano</div>
+      </div>
+      <div class="metric">
+        <div class="value">18/20</div>
+        <div class="label">RAG retrieval (MRR 0.825, eval onesta)</div>
+      </div>
+    </div>
+
+    <p>Il codice della pipeline è privato. Il materiale di verifica è pubblico e ispezionabile da chiunque.</p>
+  </section>
+
+  <!-- Quality evidence -->
+  <section>
+    <h2>Qualità misurata, non promessa</h2>
+    <div class="metrics">
+      <div class="metric">
+        <div class="value">21/21</div>
+        <div class="label">Record OCR reviewati e approvati</div>
+      </div>
+      <div class="metric">
+        <div class="value">0</div>
+        <div class="label">Blocker nella review OCR</div>
+      </div>
+      <div class="metric">
+        <div class="value">23/23</div>
+        <div class="label">Controlli release gate superati</div>
+      </div>
+      <div class="metric">
+        <div class="value">CC BY 4.0</div>
+        <div class="label">Licenza verificata a livello risorsa</div>
+      </div>
+    </div>
+    <p>I numeri completi sono in <code>quality_evidence.md</code> nel dataset pubblico.</p>
+  </section>
+
+  <!-- Targets -->
+  <section>
+    <h2>Per chi è pensato</h2>
+    <div class="targets">
+      <div class="target-card"><strong>Software house gestionali</strong>Dati fiscali e amministrativi strutturati per ERP e CRM.</div>
+      <div class="target-card"><strong>Studi commercialisti</strong>Documenti fiscali normalizzati e verificabili.</div>
+      <div class="target-card"><strong>Startup AI italiane</strong>Dataset italiani di qualità per RAG e training.</div>
+      <div class="target-card"><strong>Università / NLP</strong>Risorse linguistiche italiane con provenienza tracciata.</div>
+      <div class="target-card"><strong>Chatbot per PA</strong>Delibere, circolari e moduli come knowledge base verificabile.</div>
+      <div class="target-card"><strong>System integrator ECM</strong>Gestione documentale con pipeline dati auditabile.</div>
+    </div>
+  </section>
+
+  <!-- Early adopter offer -->
+  <section>
+    <h2>3 slot early adopter</h2>
+    <p>Sto cercando 3 early adopter per testare una prima release su fonti reali:</p>
+    <ul class="features">
+      <li><div><strong>Fonti fiscali</strong> — fatture, dichiarazioni, circolari dell'Agenzia delle Entrate.</div></li>
+      <li><div><strong>Fonti amministrative</strong> — delibere, moduli, atti PA, bandi regionali.</div></li>
+      <li><div><strong>Fonti documentali</strong> — contratti, verbali, documentazione tecnica.</div></li>
+    </ul>
+    <p>Cosa riceve l'early adopter: una mini-release dedicata sul vostro caso reale in 2-4 settimane, con manifest, checksum, quality report e indice RAG. Nessun impegno commerciale nella fase di test.</p>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact">
+    <p class="message">Ho sviluppato una pipeline che trasforma documenti italiani in dataset AI verificabili: manifest, checksum, validazione OCR, release versionate e pacchetti riproducibili. Sto cercando 3 early adopter per testare una prima release su fonti fiscali, amministrative o documentali italiane.</p>
+    <div class="links">
+      <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Vedi il dataset pubblico ↗</a>
+      <a class="btn" href="https://github.com/francescofaraone">Contatti ↗</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Italia Data Factory — di <a href="https://github.com/francescofaraone">Francesco Faraone</a> · <a href="https://huggingface.co/ceccofar">Hugging Face</a> · <a href="https://github.com/francescofaraone/italia-data-factory">GitHub</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
