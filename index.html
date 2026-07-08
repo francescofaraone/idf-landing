@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Italia Data Factory — Dataset OCR italiano verificabile per AI e LLM</title>
-  <meta name="description" content="Pipeline automatica per trasformare documenti italiani in dataset verificabili, versionati e pronti per RAG, training e benchmark.">
+  <title>Italia Data Factory — Pipeline viva per dataset AI italiani verificabili</title>
+  <meta name="description" content="Pipeline viva per monitorare fonti ufficiali italiane e trasformare documenti in dataset verificabili, versionati e pronti per RAG, training e benchmark.">
   <link rel="icon" href="logo.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -16,7 +16,8 @@
   <div class="hero">
     <img src="logo.png" alt="Francesco Faraone">
     <h1>Italia Data Factory</h1>
-    <p class="tagline">Dataset OCR italiano verificabile per AI e LLM. Pipeline automatica per trasformare documenti italiani in dataset verificabili, versionati e pronti per RAG, training e benchmark.</p>
+    <p class="eyebrow">Living official-source pipeline</p>
+    <p class="tagline">Dataset e pipeline viva per fonti ufficiali italiane: discovery incrementale, OCR verificabile, manifest, checksum, quality report e indice RAG.</p>
     <div class="links">
       <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Dataset pubblico ↗</a>
       <a class="btn" href="https://github.com/francescofaraone/italia-data-factory">Codice (privato) ↗</a>
@@ -34,7 +35,7 @@
   <!-- Solution -->
   <section>
     <h2>La soluzione</h2>
-    <p>IDF è una pipeline che produce, per ogni release:</p>
+    <p>IDF è una pipeline viva che monitora fonti ufficiali e produce, per ogni release:</p>
     <ul class="features">
       <li><div><strong>Provenienza tracciata</strong> — ogni record punta alla fonte originale con URI e SHA-256 del file sorgente.</div></li>
       <li><div><strong>OCR verificabile</strong> — GLM-OCR come extractor primario su PDF complessi, con quality report per pagina.</div></li>
@@ -42,7 +43,41 @@
       <li><div><strong>Checksum SHA-256</strong> — su ogni file della release, verificabili pubblicamente.</div></li>
       <li><div><strong>Release notes e report di qualità</strong> — numeri reali di OCR quality, review e release gate.</div></li>
       <li><div><strong>Indice RAG e valutazione di retrieval</strong> — con metriche (recall, MRR) oneste e fallimenti analizzati.</div></li>
+      <li><div><strong>Monitor incrementale</strong> — discovery giornaliera di nuove circolari/documenti ufficiali, con stato persistente e report Markdown leggibile.</div></li>
     </ul>
+  </section>
+
+  <!-- Living pipeline -->
+  <section>
+    <h2>Pipeline viva su fonti ufficiali</h2>
+    <p>IDF non è solo una release statica: il crawler ufficiale monitora fonti italiane, conserva i raw download, produce manifest e genera quality report per ogni run.</p>
+
+    <div class="source-grid">
+      <div class="source-card ready">
+        <span class="status">ready</span>
+        <h3>INPS circolari e messaggi</h3>
+        <p>Discovery RSS, download, estrazione JSON/HTML, chunking e quality report end-to-end.</p>
+        <ul>
+          <li>GitHub Action verificata</li>
+          <li>documenti e chunk generati</li>
+          <li>provenienza URL preservata</li>
+        </ul>
+      </div>
+      <div class="source-card ready">
+        <span class="status">OCR verified</span>
+        <h3>Agenzia Entrate circolari 2025</h3>
+        <p>Discovery multi-step delle pagine mensili, download PDF ufficiali e OCR GLM verificato su circolari fiscali reali.</p>
+        <ul>
+          <li>15 PDF ufficiali scoperti nello smoke test</li>
+          <li>GLM-OCR locale: quality_status=ready</li>
+          <li>runner GitHub: download/report anche senza OCR privato</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="run-proof">
+      <strong>Ultima prova tecnica:</strong> Agenzia Entrate OCR smoke: <code>downloaded=1</code>, <code>documents=1</code>, <code>chunks=2</code>, <code>quality_status=ready</code>. GitHub daily watch multi-fonte verificato con artifact JSON/Markdown.
+    </div>
   </section>
 
   <!-- Public proof -->
@@ -119,12 +154,12 @@
       <li><div><strong>Fonti amministrative</strong> — delibere, moduli, atti PA, bandi regionali.</div></li>
       <li><div><strong>Fonti documentali</strong> — contratti, verbali, documentazione tecnica.</div></li>
     </ul>
-    <p>Cosa riceve l'early adopter: una mini-release dedicata sul vostro caso reale in 2-4 settimane, con manifest, checksum, quality report e indice RAG. Nessun impegno commerciale nella fase di test.</p>
+    <p>Cosa riceve l'early adopter: una mini-release dedicata sul vostro caso reale in 2-4 settimane, con monitor fonte, manifest, checksum, OCR verificabile, quality report e indice RAG. Nessun impegno commerciale nella fase di test.</p>
   </section>
 
   <!-- Contact -->
   <div class="contact">
-    <p class="message">Ho sviluppato una pipeline che trasforma documenti italiani in dataset AI verificabili: manifest, checksum, validazione OCR, release versionate e pacchetti riproducibili. Sto cercando 3 early adopter per testare una prima release su fonti fiscali, amministrative o documentali italiane.</p>
+    <p class="message">Ho sviluppato una pipeline viva che monitora fonti ufficiali italiane e le trasforma in dataset AI verificabili: manifest, checksum, OCR, quality report, release versionate e pacchetti riproducibili. Sto cercando 3 early adopter per testare una prima release su fonti fiscali, amministrative o documentali italiane.</p>
     <div class="links">
       <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Vedi il dataset pubblico ↗</a>
       <a class="btn" href="https://github.com/francescofaraone">Contatti ↗</a>

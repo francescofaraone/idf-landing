@@ -49,6 +49,20 @@ body {
   margin-bottom: 12px;
 }
 
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  border: 1px solid rgba(88, 166, 255, 0.35);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.08);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .hero .tagline {
   font-size: 1.2rem;
   color: var(--text-muted);
@@ -175,6 +189,65 @@ section p {
   color: var(--green);
   font-weight: 700;
   flex-shrink: 0;
+}
+
+/* Living source cards */
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.source-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(88, 166, 255, 0.08), rgba(22, 27, 34, 0.95));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.source-card.ready {
+  border-color: rgba(63, 185, 80, 0.45);
+}
+
+.source-card h3 {
+  font-size: 1.05rem;
+  margin: 8px 0 10px;
+}
+
+.source-card p {
+  margin-bottom: 12px;
+}
+
+.source-card ul {
+  margin-left: 18px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.source-card .status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(63, 185, 80, 0.13);
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.run-proof {
+  background: var(--surface);
+  border: 1px solid rgba(88, 166, 255, 0.35);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  color: var(--text-muted);
+}
+
+.run-proof strong {
+  color: var(--text);
 }
 
 /* Code block */
