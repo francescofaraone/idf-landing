@@ -1,55 +1,517 @@
 {
-  "report_id": "idf-inps-pilot-evidence-001",
-  "status": "internal_technical_snapshot",
-  "executed_on": "2026-07-13",
-  "run_id": "pilot-v0.1",
-  "source": {
-    "organization": "INPS",
-    "feed_url": "https://www.inps.it/it/it.rss.circolari.xml",
-    "document_type": "circolari",
-    "covered_publication_dates": {
-      "from": "2026-04-09",
-      "to": "2026-07-07"
+  "disclaimer": "IDF is independent and is not affiliated with or endorsed by INPS. It does not provide legal, tax, payroll or pension advice.",
+  "document_attestations": [
+    {
+      "chunk_count": 3,
+      "document_id": "13b969d9c8830f3de61a3504abb4f668d32de9162501e84d513e68fedb580b4e",
+      "document_title": "Circolare numero 73 del 07-07-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.07.circolare-numero-73-del-07-07-2026_15311.html",
+      "sha256_raw": "a05e36d7a4070854873d223d62a8bf4204c0e81868cc53a0bff20f0e4736608c",
+      "source_date": "Mon Jul 06 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "f304538fd27990c68dfe175715ad0e19c2f844e9a1b8fcfee0adad5adce6a566",
+      "document_title": "Circolare numero 71 del 03-07-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.07.circolare-numero-71-del-03-07-2026_15306.html",
+      "sha256_raw": "ad48fd7070b06bf0baa21d27e7198eb055a2cad9039464c48b39238a208e1e3b",
+      "source_date": "Thu Jul 02 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "f1c56869587ef8f46f7f636522a3e63eece05db66b37a8262d3618dc2058416f",
+      "document_title": "Circolare numero 72 del 03-07-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.07.circolare-numero-72-del-03-07-2026_15307.html",
+      "sha256_raw": "509569aa9b2de778a529b950f044d88418b16507d0e130126723e7a8b632bd45",
+      "source_date": "Thu Jul 02 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "3cc7cdd80f111c175f3c54287b35426c6616dd3df3119cf12852a972a7ca43a3",
+      "document_title": "Circolare numero 70 del 26-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-70-del-26-06-2026_15301.html",
+      "sha256_raw": "df1f77ad9a2b66236e631251661d41491959e85a97505d3fa451115141d8ac81",
+      "source_date": "Thu Jun 25 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "c90b86c117435b63f17b1ee911a7077f5c7ea29a4c124ce528aabd40b8822b3d",
+      "document_title": "Circolare numero 69 del 22-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-69-del-22-06-2026_15298.html",
+      "sha256_raw": "3ab6b06618e2b404ef92ac4d2e0f9e4a01dd2a3e025d6c515a7936ec9bc00856",
+      "source_date": "Sun Jun 21 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "da161c50c05d541b21afa79cca442b8b3f4f5caa3a2e6bb3f25dc502311b8df3",
+      "document_title": "Circolare numero 68 del 19-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-68-del-19-06-2026_15297.html",
+      "sha256_raw": "f949c746aadea78085eb686e61ecfc0750c1dc6102297cd505276627b3b2b34c",
+      "source_date": "Thu Jun 18 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "434dff9de95b8027f62fd75849b6c2b87291fdf9b95a11b46363ef3f682d6811",
+      "document_title": "Circolare numero 66 del 18-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-66-del-18-06-2026_15293.html",
+      "sha256_raw": "d8b623933129d96699a222acfa4d620eb862b91c87919de7ddd43385240e4615",
+      "source_date": "Wed Jun 17 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "d1409b62c28d7f8c2b8c0508f69c7f116aaecd8c125ffd83a9ac5258b8e089e2",
+      "document_title": "Circolare numero 67 del 18-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-67-del-18-06-2026_15295.html",
+      "sha256_raw": "cf3935e4301ffb1f788043cec044b6f5975ae3578814e0b7ef578fe3fa4e438c",
+      "source_date": "Wed Jun 17 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "5496a8e2c9ba34c284d28d8960efce6b0586c9e64db324f691327fbaf1e57a9d",
+      "document_title": "Circolare numero 64 del 16-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-64-del-16-06-2026_15289.html",
+      "sha256_raw": "36b7f5f7f3af1355d0a399ebad5ce6cf84d539cd248cfd3631bc4d998146b1dd",
+      "source_date": "Mon Jun 15 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "a43b34c575e6d04c51eb07648d3f0bc16f0c3758e5c1e8233b360b2be9850c8b",
+      "document_title": "Circolare numero 65 del 16-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-65-del-16-06-2026_15291.html",
+      "sha256_raw": "0eecc654911b9b50e9b74995341c06ca24ca3d11c43de60393237fa0c39eaf5e",
+      "source_date": "Mon Jun 15 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "e68f8682ee6a61e21e760ba01fe1337426b3419d9d1f2c6e19a71f030251ec43",
+      "document_title": "Circolare numero 63 del 05-06-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.circolare-numero-63-del-05-06-2026_15279.html",
+      "sha256_raw": "53fd77e8d864ccaa93059534b191155d6eb08769cdef34e763fd6425bf6f7dd5",
+      "source_date": "Thu Jun 04 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "9740a63580773d5959afe436521c66b9c689b5a211aa32ecff8db8ae70377dde",
+      "document_title": "Circolare numero 62 del 27-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-62-del-27-05-2026_15271.html",
+      "sha256_raw": "de5f1c1bd60a1e4f6cb7e704b66f6e91e4d0e64c179bb2aa5ed31b0357880dbd",
+      "source_date": "Tue May 26 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "06df55af238f9ec48b8ee0f554a9220e059848d4b92efe52c8a47f50f505931d",
+      "document_title": "Circolare numero 61 del 26-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-61-del-26-05-2026_15268.html",
+      "sha256_raw": "7cd77c6d955edc0591e5a6d71c1b59005cc81723c3f003598d34d19b079d13f2",
+      "source_date": "Mon May 25 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "9f2be80d18d74435f7be9f7bd72d202a3024d8dd10577fdb4d53f54af2624937",
+      "document_title": "Circolare numero 60 del 21-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-60-del-21-05-2026_15264.html",
+      "sha256_raw": "fe00ec027718cf3c0839e3ce1698ff5342f191f83d4353089202b4eb54215cbd",
+      "source_date": "Wed May 20 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "76af3328bdb199ecf401b00600adc04f5c787e081a0482421eec86014fb67014",
+      "document_title": "Circolare numero 59 del 20-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-59-del-20-05-2026_15263.html",
+      "sha256_raw": "48b8578966ea5e5efe2d521c611f96e072aea70563f5f2805fcf0cdbe8c920a2",
+      "source_date": "Tue May 19 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "5a9a705fdbcdf9be768af16bc07ddbf2f5b89c80fb31760afa7fe2543f17f704",
+      "document_title": "Circolare numero 58 del 20-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-58-del-20-05-2026_15262.html",
+      "sha256_raw": "526af676bd5735055ddf92431ca69af7a449b934f83bc450106366d62ff07bc4",
+      "source_date": "Tue May 19 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "bdb43d940d9075253c30beda66073b5ae6ddd71a9cbb490ec680805ff9be9eae",
+      "document_title": "Circolare numero 56 del 14-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-56-del-14-05-2026_15259.html",
+      "sha256_raw": "aec39529344690cbe8c81d3612eb7024ef429c13699cc258a312236e91176580",
+      "source_date": "Wed May 13 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "69c511c04e3c7ada12eb7191d193dbabc647d4ab9865344b381d27af29bf7114",
+      "document_title": "Circolare numero 55 del 14-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-55-del-14-05-2026_15258.html",
+      "sha256_raw": "733fa14dda38970e75a9ce74067da8cc9cf1fc07c52d12c221605500ea37b193",
+      "source_date": "Wed May 13 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "33163cf77b79871db67e2dd2eb5aab26398ce8f0ef9303c737d5c03eef084338",
+      "document_title": "Circolare numero 57 del 14-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-57-del-14-05-2026_15260.html",
+      "sha256_raw": "79d2f5e80a33ed7b55fa44d8b21a7d4d4783e99db684981d8c2c9b3c8fd69c10",
+      "source_date": "Wed May 13 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "8fb414f2a76a797f95df5bd7c11c65cb676212d6e5c2d53b486feb1ade0ca52d",
+      "document_title": "Circolare numero 54 del 13-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-54-del-13-05-2026_15257.html",
+      "sha256_raw": "4f92262f49244102930657abb23a84d2062e1b3a4c49d506c146478497347739",
+      "source_date": "Tue May 12 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "650bd1f45068a3a9b84844691c766e967c520314ec8ae412441bad13270c9570",
+      "document_title": "Circolare numero 53 del 07-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-53-del-07-05-2026_15256.html",
+      "sha256_raw": "c71c47298fb238f22e7040e3c23883e56c9d28ef6cfe5168d9a648cb914a8d7a",
+      "source_date": "Wed May 06 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "02af5d3ffe3afec5471c595601254fb884678f3c55c901a33ad302d1116bf697",
+      "document_title": "Circolare numero 52 del 05-05-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-52-del-05-05-2026_15253.html",
+      "sha256_raw": "eae6fd53b3c057797eedec79197f5491edf3c2b528281ff871bdfff33d5e7cd1",
+      "source_date": "Mon May 04 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "d49041a069aab4635ee40f6f49d3dec539a5f5e7256a063a04988b30425627d1",
+      "document_title": "Circolare numero 51 del 30-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-51-del-30-04-2026_15252.html",
+      "sha256_raw": "e56a495fbc108c0c738e1c23d933cf0ff2285b9690a9a22729c0d0584547c7b1",
+      "source_date": "Wed Apr 29 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "13e984df3002f63c77c25d06f4ea837e449a8f4028860089f794eb0077254ad4",
+      "document_title": "Circolare numero 50 del 28-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-50-del-28-04-2026_15249.html",
+      "sha256_raw": "ae88b511289ff34215b708d8e45961bacc3a7c56fb981545d09ed5ef43fd0348",
+      "source_date": "Mon Apr 27 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "369c4633dc5593ccafc2bf69ac83b1c43bef2b66ab7e550b8a870f9bf027d100",
+      "document_title": "Circolare numero 48 del 22-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-48-del-22-04-2026_15245.html",
+      "sha256_raw": "eb0bdabccf2132ae3bb75a5d531650a90c360bcfd796ef1440000d18c1f6baac",
+      "source_date": "Tue Apr 21 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "431653156feb3636b316a618fbabf0c2353b5c0ae667714cf1bfec63048e53a9",
+      "document_title": "Circolare numero 49 del 22-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-49-del-22-04-2026_15246.html",
+      "sha256_raw": "6b8c718a432364940839e971ec30a6265fcccf234058604f32074282dd4ba121",
+      "source_date": "Tue Apr 21 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "ac2737670cb9364b8347b702756a08dffc905c182bc8860b49749840597eb0f5",
+      "document_title": "Circolare numero 47 del 21-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-47-del-21-04-2026_15242.html",
+      "sha256_raw": "055e1de768a40f8cc6c55cc918c13cda38cc743f5a7d9a3dae46d2166fd2d4a2",
+      "source_date": "Mon Apr 20 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "1891ca4be11d1654371c8b6495f2d498326f2bd95a461818af19585117aeb8bb",
+      "document_title": "Circolare numero 46 del 15-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-46-del-15-04-2026_15240.html",
+      "sha256_raw": "7eab3f808f7e792875b40a2842b1da2f9e5330597f20d011cc7e06c556d522a0",
+      "source_date": "Tue Apr 14 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "70d8eb741078853c89ceecd159fae87b88634faabe3db2227271b7e8819c53df",
+      "document_title": "Circolare numero 45 del 10-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-45-del-10-04-2026_15234.html",
+      "sha256_raw": "da9275cb9e52334d3bcfc3b74e1bf24f534f08de1c6c890d32baf5df8047a8bf",
+      "source_date": "Thu Apr 09 22:00:00 UTC 2026"
+    },
+    {
+      "chunk_count": 3,
+      "document_id": "83d9a04fb1b4c2748ad0968dac4a9fcf76f11972eabacc0cd6f2391557763301",
+      "document_title": "Circolare numero 44 del 09-04-2026",
+      "official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-44-del-09-04-2026_15233.html",
+      "sha256_raw": "a168b2d2c8d45164e231739618bafd29476aebf1cf95fbb86be5582170351228",
+      "source_date": "Wed Apr 08 22:00:00 UTC 2026"
     }
+  ],
+  "executed_on": "2026-07-13",
+  "integrity": {
+    "eval_set_sha256": "a54d640cf236f250ac7a514769419ff70a64b05ced041d54f0058d69715a246c",
+    "internal_archive_sha256": "8de88af5ea608fa2e417b387c327bfd6f6907ae7487d7151a75251eed843c159",
+    "manifest_scope": "all_regular_files_recursive_except_manifest",
+    "pilot_manifest_sha256": "204e825ed1cfeb0e736cd02b7ee8e0303d457b80ae42e2b6995d59eae645c80b",
+    "pipeline_report_sha256": "de892c63478c4c170032b2a1520791c09a96e2744612c3d73ee59ced023cbaaa",
+    "recursive_manifest_regular_files": 86,
+    "retrieval_report_sha256": "c3afa03b2a318f3690fe9a15949b664f8a53d9dcedfc003bb5e27e358237ec7d",
+    "source_manifest_sha256": "aa3e29f6d33ef8798a57eecdfea0e83e04d96a4f327f800bceecbd2cd9cfc3b7",
+    "symlinks_allowed": false
   },
   "pipeline": {
-    "discovered_urls": 50,
-    "downloaded": 30,
-    "documents": 30,
     "chunks_internal": 90,
-    "skipped": 0,
+    "discovered_urls": 50,
+    "documents": 30,
+    "downloaded": 30,
+    "quality_status": "ready",
     "quality_warnings": 0,
-    "quality_status": "ready"
+    "skipped": 0
   },
+  "report_id": "idf-inps-pilot-evidence-002",
   "retrieval_smoke_test": {
-    "query_count": 5,
-    "top_k": 5,
-    "embedding": "deterministic_hashed_bow_v1",
-    "dimensions": 512,
-    "lexical_weight": 0.65,
     "candidate_k": 30,
-    "expected_evidence_ranks": [1, 1, 4, 2, 2],
-    "passed": 5,
+    "cases": [
+      {
+        "expected_chunk_id": "c04182a82ea069f308ee375d98c99650b6be87138821dd8c1e3c87e0fd00369d",
+        "expected_document_id": "f1c56869587ef8f46f7f636522a3e63eece05db66b37a8262d3618dc2058416f",
+        "expected_official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.07.circolare-numero-72-del-03-07-2026_15307.html",
+        "passed": true,
+        "query_id": "inps-pilot-demo-001",
+        "rank": 1,
+        "top_k_hits": [
+          {
+            "chunk_id": "27caaf2d5bed1eec26a81a3371a118b9031f606ca82296947dc8d825e33b2878",
+            "document_id": "f1c56869587ef8f46f7f636522a3e63eece05db66b37a8262d3618dc2058416f",
+            "position": 1,
+            "score": 0.356742
+          },
+          {
+            "chunk_id": "c04182a82ea069f308ee375d98c99650b6be87138821dd8c1e3c87e0fd00369d",
+            "document_id": "f1c56869587ef8f46f7f636522a3e63eece05db66b37a8262d3618dc2058416f",
+            "position": 2,
+            "score": 0.355952
+          },
+          {
+            "chunk_id": "96faf9de993848b29b9f6d4652d85c2ff3237e65236dc578f4aaac494c7657fb",
+            "document_id": "bdb43d940d9075253c30beda66073b5ae6ddd71a9cbb490ec680805ff9be9eae",
+            "position": 3,
+            "score": 0.341488
+          },
+          {
+            "chunk_id": "b577817bf59351b8629abafbb30727aeab7becfe51e40e02fafa46b09bc4ec04",
+            "document_id": "69c511c04e3c7ada12eb7191d193dbabc647d4ab9865344b381d27af29bf7114",
+            "position": 4,
+            "score": 0.330477
+          },
+          {
+            "chunk_id": "6c31d1da1842322798f329296d2eed0182aa71e278c70537de615ee526c2700e",
+            "document_id": "33163cf77b79871db67e2dd2eb5aab26398ce8f0ef9303c737d5c03eef084338",
+            "position": 5,
+            "score": 0.328034
+          }
+        ]
+      },
+      {
+        "expected_chunk_id": "5ab14b9d3b36358aa8cce5ae100ef115c62d857b699d17464ce1d5988080f123",
+        "expected_document_id": "bdb43d940d9075253c30beda66073b5ae6ddd71a9cbb490ec680805ff9be9eae",
+        "expected_official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-56-del-14-05-2026_15259.html",
+        "passed": true,
+        "query_id": "inps-pilot-demo-002",
+        "rank": 1,
+        "top_k_hits": [
+          {
+            "chunk_id": "5ab14b9d3b36358aa8cce5ae100ef115c62d857b699d17464ce1d5988080f123",
+            "document_id": "bdb43d940d9075253c30beda66073b5ae6ddd71a9cbb490ec680805ff9be9eae",
+            "position": 1,
+            "score": 0.323381
+          },
+          {
+            "chunk_id": "887441ad04dbd724264a1accd286220fca883a27b8bb854314fcc64e7e4dfa68",
+            "document_id": "ac2737670cb9364b8347b702756a08dffc905c182bc8860b49749840597eb0f5",
+            "position": 2,
+            "score": 0.278135
+          },
+          {
+            "chunk_id": "6f60aa83b4033710902ba3189c7f31e48116b29c6f6f5aa471e7eebffe9764e1",
+            "document_id": "3cc7cdd80f111c175f3c54287b35426c6616dd3df3119cf12852a972a7ca43a3",
+            "position": 3,
+            "score": 0.26943
+          },
+          {
+            "chunk_id": "1bee9329a903b2bf40391a7fbefd78b0c8b66d711fb775e8bd993207c9f3fc42",
+            "document_id": "434dff9de95b8027f62fd75849b6c2b87291fdf9b95a11b46363ef3f682d6811",
+            "position": 4,
+            "score": 0.262111
+          },
+          {
+            "chunk_id": "aaa7d0678686fc93f3a6fa961ba4a006fd2393fb1de3815b2d2d5912d0b9063d",
+            "document_id": "70d8eb741078853c89ceecd159fae87b88634faabe3db2227271b7e8819c53df",
+            "position": 5,
+            "score": 0.260836
+          }
+        ]
+      },
+      {
+        "expected_chunk_id": "316e1a865eaafc98e5571be348a3dc9085d71831d30c013ce536441c64e091e6",
+        "expected_document_id": "69c511c04e3c7ada12eb7191d193dbabc647d4ab9865344b381d27af29bf7114",
+        "expected_official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-55-del-14-05-2026_15258.html",
+        "passed": true,
+        "query_id": "inps-pilot-demo-003",
+        "rank": 4,
+        "top_k_hits": [
+          {
+            "chunk_id": "5ab14b9d3b36358aa8cce5ae100ef115c62d857b699d17464ce1d5988080f123",
+            "document_id": "bdb43d940d9075253c30beda66073b5ae6ddd71a9cbb490ec680805ff9be9eae",
+            "position": 1,
+            "score": 0.397236
+          },
+          {
+            "chunk_id": "395cfca226da371fba64f29f5290fac91d3edba37450d99715db3f3edf1af24d",
+            "document_id": "33163cf77b79871db67e2dd2eb5aab26398ce8f0ef9303c737d5c03eef084338",
+            "position": 2,
+            "score": 0.390095
+          },
+          {
+            "chunk_id": "3c9cfa8c77867e2cf0dee7ea0cad7608b3782e07cc130d455828a7727c4a6434",
+            "document_id": "431653156feb3636b316a618fbabf0c2353b5c0ae667714cf1bfec63048e53a9",
+            "position": 3,
+            "score": 0.378249
+          },
+          {
+            "chunk_id": "316e1a865eaafc98e5571be348a3dc9085d71831d30c013ce536441c64e091e6",
+            "document_id": "69c511c04e3c7ada12eb7191d193dbabc647d4ab9865344b381d27af29bf7114",
+            "position": 4,
+            "score": 0.374166
+          },
+          {
+            "chunk_id": "7d75394f0b4176f0d85f849e66b7af648d583a76424aee5fb47b868ed23c09bd",
+            "document_id": "8fb414f2a76a797f95df5bd7c11c65cb676212d6e5c2d53b486feb1ade0ca52d",
+            "position": 5,
+            "score": 0.351268
+          }
+        ]
+      },
+      {
+        "expected_chunk_id": "395cfca226da371fba64f29f5290fac91d3edba37450d99715db3f3edf1af24d",
+        "expected_document_id": "33163cf77b79871db67e2dd2eb5aab26398ce8f0ef9303c737d5c03eef084338",
+        "expected_official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-57-del-14-05-2026_15260.html",
+        "passed": true,
+        "query_id": "inps-pilot-demo-004",
+        "rank": 2,
+        "top_k_hits": [
+          {
+            "chunk_id": "5ab14b9d3b36358aa8cce5ae100ef115c62d857b699d17464ce1d5988080f123",
+            "document_id": "bdb43d940d9075253c30beda66073b5ae6ddd71a9cbb490ec680805ff9be9eae",
+            "position": 1,
+            "score": 0.397236
+          },
+          {
+            "chunk_id": "395cfca226da371fba64f29f5290fac91d3edba37450d99715db3f3edf1af24d",
+            "document_id": "33163cf77b79871db67e2dd2eb5aab26398ce8f0ef9303c737d5c03eef084338",
+            "position": 2,
+            "score": 0.390095
+          },
+          {
+            "chunk_id": "316e1a865eaafc98e5571be348a3dc9085d71831d30c013ce536441c64e091e6",
+            "document_id": "69c511c04e3c7ada12eb7191d193dbabc647d4ab9865344b381d27af29bf7114",
+            "position": 3,
+            "score": 0.374166
+          },
+          {
+            "chunk_id": "3c9cfa8c77867e2cf0dee7ea0cad7608b3782e07cc130d455828a7727c4a6434",
+            "document_id": "431653156feb3636b316a618fbabf0c2353b5c0ae667714cf1bfec63048e53a9",
+            "position": 4,
+            "score": 0.332005
+          },
+          {
+            "chunk_id": "b21e9816b3b8e52c5518ad49d475837dfb7c7dca7a441e8f84ad867f4fc301f9",
+            "document_id": "70d8eb741078853c89ceecd159fae87b88634faabe3db2227271b7e8819c53df",
+            "position": 5,
+            "score": 0.315244
+          }
+        ]
+      },
+      {
+        "expected_chunk_id": "fd9ff87d300582afdd6d0d710309a9d6eabbeecebbc5ba7f2206c3f3387b5df8",
+        "expected_document_id": "83d9a04fb1b4c2748ad0968dac4a9fcf76f11972eabacc0cd6f2391557763301",
+        "expected_official_url": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-44-del-09-04-2026_15233.html",
+        "passed": true,
+        "query_id": "inps-pilot-demo-005",
+        "rank": 2,
+        "top_k_hits": [
+          {
+            "chunk_id": "e991450f6f53eb9ddfbafe672e73549afc03fdcc215b83441229603eab5466c1",
+            "document_id": "9740a63580773d5959afe436521c66b9c689b5a211aa32ecff8db8ae70377dde",
+            "position": 1,
+            "score": 0.148209
+          },
+          {
+            "chunk_id": "24cc01872985611063851a54b5d6f97bf65a19a828096d17d7531df76fc5f50b",
+            "document_id": "83d9a04fb1b4c2748ad0968dac4a9fcf76f11972eabacc0cd6f2391557763301",
+            "position": 2,
+            "score": 0.132655
+          },
+          {
+            "chunk_id": "fd9ff87d300582afdd6d0d710309a9d6eabbeecebbc5ba7f2206c3f3387b5df8",
+            "document_id": "83d9a04fb1b4c2748ad0968dac4a9fcf76f11972eabacc0cd6f2391557763301",
+            "position": 3,
+            "score": 0.123169
+          },
+          {
+            "chunk_id": "887441ad04dbd724264a1accd286220fca883a27b8bb854314fcc64e7e4dfa68",
+            "document_id": "ac2737670cb9364b8347b702756a08dffc905c182bc8860b49749840597eb0f5",
+            "position": 4,
+            "score": 0.10397
+          },
+          {
+            "chunk_id": "011a14f17758ff57abaa0bb7098081ad8145e45c8caa5993c683c1433540af65",
+            "document_id": "9f2be80d18d74435f7be9f7bd72d202a3024d8dd10577fdb4d53f54af2624937",
+            "position": 5,
+            "score": 0.085455
+          }
+        ]
+      }
+    ],
+    "dimensions": 512,
+    "embedding": "deterministic_hashed_bow_v1",
+    "expected_evidence_ranks": [
+      1,
+      1,
+      4,
+      2,
+      2
+    ],
     "failed": 0,
-    "recall_at_5": 1.0,
+    "lexical_weight": 0.65,
     "mrr": 0.65,
-    "qualification": "Five manually curated questions; technical smoke test, not a production-quality estimate."
-  },
-  "integrity": {
-    "recursive_manifest_regular_files": 86,
-    "manifest_scope": "all_regular_files_recursive_except_manifest",
-    "symlinks_allowed": false,
-    "pilot_manifest_sha256": "b70bc4cf5dd5c230f1bad87c88eb2aab0cc93bdd5d0c9f7b4f4235cba77092ac",
-    "pipeline_report_sha256": "de892c63478c4c170032b2a1520791c09a96e2744612c3d73ee59ced023cbaaa",
-    "retrieval_report_sha256": "c3afa03b2a318f3690fe9a15949b664f8a53d9dcedfc003bb5e27e358237ec7d",
-    "eval_set_sha256": "a54d640cf236f250ac7a514769419ff70a64b05ced041d54f0058d69715a246c",
-    "internal_archive_sha256": "923632d8c95f2a3c3402af1503b7b28b00fd75ffa068d1299ea798b685a5684c"
+    "passed": 5,
+    "qualification": "Five manually curated questions; technical smoke test, not a production-quality estimate.",
+    "query_count": 5,
+    "rank_basis": "first top-k hit whose document_id equals expected_document_id",
+    "recall_at_5": 1.0,
+    "top_k": 5
   },
   "rights": {
     "distribution_status": "internal_evaluation_only",
-    "rights_status": "review_required",
+    "external_pilot_limit": "Metadata, official URLs, checksums, change reports and customer-side processing only until rights approval.",
     "redistribution": "not_approved",
-    "external_pilot_limit": "Metadata, official URLs, checksums, change reports and customer-side processing only until rights approval."
+    "rights_status": "review_required"
   },
-  "disclaimer": "IDF is independent and is not affiliated with or endorsed by INPS. It does not provide legal, tax, payroll or pension advice."
+  "run_id": "pilot-v0.1",
+  "source": {
+    "covered_publication_dates": {
+      "from": "2026-04-09",
+      "to": "2026-07-07"
+    },
+    "document_type": "circolari",
+    "feed_url": "https://www.inps.it/it/it.rss.circolari.xml",
+    "organization": "INPS"
+  },
+  "status": "public_redacted_attestation",
+  "verification_scope": {
+    "not_publicly_reproducible": "Extraction and retrieval cannot be rerun from this public artifact because transformed INPS text remains internal pending rights review.",
+    "publicly_checkable": [
+      "official source identities and URLs",
+      "per-document chunk counts and aggregate consistency",
+      "retrieval ranks from redacted IDs and ordered top-k result IDs",
+      "MRR and Recall@5 arithmetic",
+      "integrity checking of this attestation against its SHA-256 sidecar"
+    ]
+  }
 }

@@ -13,9 +13,9 @@
   <main>
     <div class="hero">
       <img src="logo.png" alt="Italia Data Factory">
-      <p class="eyebrow">Internal technical snapshot</p>
-      <h1>Evidenza pilot INPS</h1>
-      <p class="tagline">Metriche e metodologia pubblicabili dello snapshot IDF del 13 luglio 2026. Nessun testo trasformato INPS è pubblicato in questa pagina.</p>
+      <p class="eyebrow">Public redacted attestation</p>
+      <h1>Attestazione tecnica pilot INPS</h1>
+      <p class="tagline">Identità delle fonti, conteggi e risultati redatti dello snapshot IDF del 13 luglio 2026. Nessun testo trasformato INPS è pubblicato in questa pagina.</p>
       <div class="links">
         <a class="btn btn-primary" href="inps-pilot-evidence.json">Scarica JSON ↗</a>
         <a class="btn" href="inps-pilot-evidence.json.sha256">Checksum JSON ↗</a>
@@ -27,7 +27,7 @@
       <h2>Scope dello snapshot</h2>
       <ul class="features">
         <li><div><strong>Run</strong> — <code>pilot-v0.1</code>, eseguito il 13 luglio 2026.</div></li>
-        <li><div><strong>Fonte</strong> — RSS ufficiale INPS per circolari e messaggi.</div></li>
+        <li><div><strong>Fonte</strong> — RSS ufficiale INPS per circolari.</div></li>
         <li><div><strong>Corpus</strong> — 30 circolari pubblicate dal 9 aprile al 7 luglio 2026.</div></li>
         <li><div><strong>Stato</strong> — snapshot tecnico interno, non dataset pubblico o consegnabile.</div></li>
       </ul>
@@ -55,9 +55,22 @@
     </section>
 
     <section>
+      <h2>Casi redatti e fonti attese</h2>
+      <p>Il JSON pubblico contiene, per ciascun caso, ID della query, ID di documento e chunk attesi, risultati top-5 ordinati e punteggi. Gli URL seguenti permettono di controllare l'identità della fonte ufficiale senza pubblicare il testo trasformato.</p>
+      <ul class="features">
+        <li><div><code>inps-pilot-demo-001</code> — rango 1 — <a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.07.circolare-numero-72-del-03-07-2026_15307.html">Circolare 72/2026 ↗</a></div></li>
+        <li><div><code>inps-pilot-demo-002</code> — rango 1 — <a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-56-del-14-05-2026_15259.html">Circolare 56/2026 ↗</a></div></li>
+        <li><div><code>inps-pilot-demo-003</code> — rango 4 — <a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-55-del-14-05-2026_15258.html">Circolare 55/2026 ↗</a></div></li>
+        <li><div><code>inps-pilot-demo-004</code> — rango 2 — <a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-57-del-14-05-2026_15260.html">Circolare 57/2026 ↗</a></div></li>
+        <li><div><code>inps-pilot-demo-005</code> — rango 2 — <a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.circolare-numero-44-del-09-04-2026_15233.html">Circolare 44/2026 ↗</a></div></li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Integrità</h2>
       <p>Il manifest interno finale copre ricorsivamente 86 file regolari, inclusi RAG index, eval report e Knowledge Vault; il manifest stesso è escluso dal proprio hash. I symlink sono rifiutati.</p>
-      <p>I checksum dei report interni e dell'archivio sono pubblicati nel file JSON per rendere confrontabili future verifiche autorizzate, senza distribuire il contenuto.</p>
+      <p>Il JSON pubblica inoltre 30 attestazioni non-content-bearing con URL ufficiale, ID, checksum raw e conteggio chunk per documento. I conteggi, i ranghi e l'aritmetica delle metriche sono quindi controllabili sul report pubblico.</p>
+      <div class="run-proof"><strong>Perimetro:</strong> questa è un'attestazione tecnica, non una riproduzione pubblica dell'esecuzione. Estrazione e retrieval non sono rieseguibili senza gli artifact testuali interni, che restano esclusi finché la verifica dei diritti non li autorizza.</div>
     </section>
 
     <section>
