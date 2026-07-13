@@ -1,0 +1,55 @@
+{
+  "report_id": "idf-inps-pilot-evidence-001",
+  "status": "internal_technical_snapshot",
+  "executed_on": "2026-07-13",
+  "run_id": "pilot-v0.1",
+  "source": {
+    "organization": "INPS",
+    "feed_url": "https://www.inps.it/it/it.rss.circolari.xml",
+    "document_type": "circolari",
+    "covered_publication_dates": {
+      "from": "2026-04-09",
+      "to": "2026-07-07"
+    }
+  },
+  "pipeline": {
+    "discovered_urls": 50,
+    "downloaded": 30,
+    "documents": 30,
+    "chunks_internal": 90,
+    "skipped": 0,
+    "quality_warnings": 0,
+    "quality_status": "ready"
+  },
+  "retrieval_smoke_test": {
+    "query_count": 5,
+    "top_k": 5,
+    "embedding": "deterministic_hashed_bow_v1",
+    "dimensions": 512,
+    "lexical_weight": 0.65,
+    "candidate_k": 30,
+    "expected_evidence_ranks": [1, 1, 4, 2, 2],
+    "passed": 5,
+    "failed": 0,
+    "recall_at_5": 1.0,
+    "mrr": 0.65,
+    "qualification": "Five manually curated questions; technical smoke test, not a production-quality estimate."
+  },
+  "integrity": {
+    "recursive_manifest_regular_files": 86,
+    "manifest_scope": "all_regular_files_recursive_except_manifest",
+    "symlinks_allowed": false,
+    "pilot_manifest_sha256": "b70bc4cf5dd5c230f1bad87c88eb2aab0cc93bdd5d0c9f7b4f4235cba77092ac",
+    "pipeline_report_sha256": "de892c63478c4c170032b2a1520791c09a96e2744612c3d73ee59ced023cbaaa",
+    "retrieval_report_sha256": "c3afa03b2a318f3690fe9a15949b664f8a53d9dcedfc003bb5e27e358237ec7d",
+    "eval_set_sha256": "a54d640cf236f250ac7a514769419ff70a64b05ced041d54f0058d69715a246c",
+    "internal_archive_sha256": "923632d8c95f2a3c3402af1503b7b28b00fd75ffa068d1299ea798b685a5684c"
+  },
+  "rights": {
+    "distribution_status": "internal_evaluation_only",
+    "rights_status": "review_required",
+    "redistribution": "not_approved",
+    "external_pilot_limit": "Metadata, official URLs, checksums, change reports and customer-side processing only until rights approval."
+  },
+  "disclaimer": "IDF is independent and is not affiliated with or endorsed by INPS. It does not provide legal, tax, payroll or pension advice."
+}

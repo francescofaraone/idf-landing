@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Italia Data Factory — Verified Memory Feed per fonti ufficiali italiane</title>
-  <meta name="description" content="Feed verificabile e aggiornato di fonti ufficiali italiane per software paghe, HR, ERP e assistenti AI: provenance, checksum, quality report ed eval RAG.">
+  <title>Italia Data Factory — Verified Memory Feed</title>
+  <meta name="description" content="Pipeline indipendente per monitorare fonti ufficiali italiane con provenance, checksum, quality report ed eval RAG.">
   <link rel="icon" href="logo.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -14,16 +14,17 @@
 
   <!-- Hero -->
   <div class="hero">
-    <img src="logo.png" alt="Francesco Faraone">
+    <img src="logo.png" alt="Italia Data Factory">
     <h1>Italia Data Factory</h1>
-    <p class="eyebrow">Verified official-source memory feed</p>
-    <p class="tagline">Il layer dati ufficiale che alimenta software paghe, HR, ERP e assistenti AI con fonti aggiornate, citabili e auditabili.</p>
+    <p class="eyebrow">Verified official-source memory pipeline</p>
+    <p class="tagline">Una pipeline indipendente che aiuta software paghe, HR, ERP e assistenti AI a monitorare fonti ufficiali con provenance, checksum e qualità misurata.</p>
     <div class="links">
       <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Dataset pubblico ↗</a>
-      <a class="btn" href="https://github.com/francescofaraone/italia-data-factory">Codice (privato) ↗</a>
+      <a class="btn" href="inps-pilot-evidence.html">Evidenza pilot INPS ↗</a>
     </div>
   </div>
 
+  <main>
   <!-- Problem -->
   <section>
     <h2>Il problema</h2>
@@ -66,43 +67,47 @@
       <div class="source-card ready">
         <span class="status">OCR verified</span>
         <h3>Agenzia Entrate circolari 2025–2026</h3>
-        <p>Discovery multi-step e OCR GLM full-page verificati localmente; la schedule automatica è sospesa in modalità fail-closed perché robots.txt restituisce HTTP 403.</p>
+        <p>Discovery multi-step e OCR GLM full-page verificati localmente. La schedule automatica resta sospesa dopo precedenti risposte di accesso instabili; il robots.txt è stato ricontrollato il 13 luglio 2026 con HTTP 200 e <code>Disallow:</code> vuoto.</p>
         <ul>
           <li>PDF ufficiali e pagine complete processati localmente</li>
           <li>GLM-OCR locale: quality_status=ready</li>
-          <li>esecuzione solo esplicita e conforme alla policy</li>
+          <li>riattivazione solo dopo verifica policy e comportamento del runner</li>
         </ul>
       </div>
     </div>
 
     <div class="run-proof">
-      <strong>Ultima prova tecnica:</strong> watcher giornaliero INPS operativo; Agenzia Entrate verificata localmente con OCR completo e mantenuta fail-closed fuori dalla schedule automatica. Ogni run produce artifact JSON/Markdown e quality evidence.
+      <strong>Stato al 13 luglio 2026:</strong> watcher giornaliero INPS operativo; Agenzia Entrate verificata localmente con OCR completo ma ancora esclusa dalla schedule automatica in attesa di una nuova verifica end-to-end del runner.
     </div>
   </section>
 
   <!-- INPS pilot -->
   <section>
     <h2>Verified Memory Feed — INPS</h2>
-    <p>Un pilot privato di 30 giorni per chi ha già un gestionale, un motore RAG o un assistente AI e non vuole mantenere internamente discovery, parsing, provenance, aggiornamenti ed eval delle circolari INPS.</p>
+    <p>Pilot indipendente di 30 giorni per chi ha già un gestionale, un motore RAG o un assistente AI e vuole misurare discovery, provenance e aggiornamento delle fonti INPS nel proprio ambiente autorizzato.</p>
 
     <div class="metrics">
-      <div class="metric"><div class="value">30</div><div class="label">Circolari INPS processate</div></div>
-      <div class="metric"><div class="value">90</div><div class="label">Chunk citabili con ID stabili</div></div>
-      <div class="metric"><div class="value">5/5</div><div class="label">Evidenze corrette in top 5</div></div>
-      <div class="metric"><div class="value">1.0</div><div class="label">Recall@5 misurato</div></div>
+      <div class="metric"><div class="value">30</div><div class="label">Circolari nello snapshot interno</div></div>
+      <div class="metric"><div class="value">90</div><div class="label">Chunk interni, non distribuiti</div></div>
+      <div class="metric"><div class="value">5/5</div><div class="label">Evidenza in top 5 su cinque query</div></div>
+      <div class="metric"><div class="value">1.0</div><div class="label">Recall@5 sullo smoke test</div></div>
     </div>
 
     <ul class="features">
       <li><div><strong>Aggiornamento giornaliero</strong> — monitor incrementale di circolari e messaggi INPS.</div></li>
-      <li><div><strong>Feed integrabile</strong> — JSONL, Parquet o Markdown con URL ufficiale, ID e checksum.</div></li>
-      <li><div><strong>Baseline verificabile</strong> — reference RAG, eval set e metriche riproducibili.</div></li>
+      <li><div><strong>Consegna attuale</strong> — metadata, URL ufficiali, checksum e delta report.</div></li>
+      <li><div><strong>Processing customer-side</strong> — reference RAG ed eval nell'ambiente autorizzato del cliente.</div></li>
       <li><div><strong>Fail-closed</strong> — errori, diritti incerti e documenti non processabili vengono dichiarati.</div></li>
     </ul>
 
     <div class="run-proof">
-      <strong>Risultato reale:</strong> <code>documents=30</code>, <code>chunks=90</code>, <code>skipped=0</code>, <code>quality_warnings=0</code>, <code>Recall@5=1.0</code>, <code>MRR=0.65</code>. Pilot da €1.500 a €3.000 + IVA, secondo l'integrazione.
+      <strong>Snapshot interno del 13 luglio 2026:</strong> 30 circolari pubblicate dal 9 aprile al 7 luglio 2026, 90 chunk interni, zero skip, zero quality warning. Smoke eval su cinque query: <code>Recall@5=1.0</code>, <code>MRR=0.65</code>, ranghi <code>1,1,4,2,2</code>. Queste metriche non sono una stima generalizzabile della qualità di produzione. <a href="inps-pilot-evidence.html">Metodologia e checksum ↗</a>
     </div>
-    <p><small>Il pacchetto INPS è per valutazione privata: diritti <code>review_required</code>, redistribuzione non approvata fino al completamento della revisione.</small></p>
+    <div class="problem">
+      <p><strong>Diritti: <code>review_required</code>. Redistribuzione: <code>not_approved</code>.</strong></p>
+      <p>Fino all'approvazione non vendiamo né redistribuiamo documenti o chunk trasformati INPS. Il pilot esterno è limitato a metadata, link ufficiali, checksum, report e processing customer-side.</p>
+      <p>IDF è indipendente, non affiliato né approvato da INPS. Non fornisce consulenza legale, fiscale, previdenziale o paghe.</p>
+    </div>
   </section>
 
   <!-- Public proof -->
@@ -173,26 +178,27 @@
   <!-- Early adopter offer -->
   <section>
     <h2>3 slot pilot INPS</h2>
-    <p>Sto cercando 3 partner con un prodotto già esistente — software paghe/HR, ERP o assistente AI — per validare il feed su un flusso reale:</p>
+    <p>Sto cercando 3 partner con un prodotto già esistente — software paghe/HR, ERP o assistente AI — per validare monitoraggio e processing customer-side:</p>
     <ul class="features">
-      <li><div><strong>30 giorni</strong> — monitoraggio e feed incrementale INPS.</div></li>
-      <li><div><strong>Integrazione</strong> — formati e consegna concordati con il vostro stack.</div></li>
+      <li><div><strong>30 giorni</strong> — monitoraggio incrementale INPS.</div></li>
+      <li><div><strong>Integrazione</strong> — metadata, URL, checksum e procedure nel vostro stack.</div></li>
       <li><div><strong>Accettazione misurabile</strong> — query reali, retrieval, citazioni e report finale.</div></li>
     </ul>
-    <p>Prezzo: €1.500 + IVA per il pilot standard, fino a €3.000 + IVA con integrazione personalizzata o seconda fonte.</p>
+    <p>Prezzo: €1.500 + IVA per il pilot standard, fino a €3.000 + IVA con integrazione personalizzata o seconda fonte. Ogni fonte e forma di consegna resta subordinata alla relativa verifica dei diritti.</p>
   </section>
 
   <!-- Contact -->
   <div class="contact">
-    <p class="message">Avete già il prodotto AI o gestionale. IDF mantiene il layer dati ufficiale a monte: fonti aggiornate, provenance, checksum, quality report e baseline RAG. Sono disponibili 3 slot per il pilot Verified Memory Feed — INPS.</p>
+    <p class="message">Avete già il prodotto AI o gestionale. IDF può ridurre il lavoro upstream di monitoraggio, provenance e verifica, senza sostituire il vostro software e senza redistribuire contenuti non autorizzati.</p>
     <div class="links">
-      <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Vedi il dataset pubblico ↗</a>
-      <a class="btn" href="https://github.com/francescofaraone">Contatti ↗</a>
+      <a class="btn btn-primary" href="inps-pilot-evidence.html">Verifica lo snapshot ↗</a>
+      <a class="btn" href="https://github.com/francescofaraone">Profilo e contatti GitHub ↗</a>
     </div>
   </div>
+  </main>
 
   <footer>
-    <p>Italia Data Factory — di <a href="https://github.com/francescofaraone">Francesco Faraone</a> · <a href="https://huggingface.co/ceccofar">Hugging Face</a> · <a href="https://github.com/francescofaraone/italia-data-factory">GitHub</a></p>
+    <p>Italia Data Factory — di <a href="https://github.com/francescofaraone">Francesco Faraone</a> · <a href="https://huggingface.co/ceccofar">Hugging Face</a> · progetto indipendente</p>
   </footer>
 
 </div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDF — Evidenza pilot INPS</title>
+  <meta name="description" content="Metriche, metodologia, checksum e limiti dello snapshot tecnico interno IDF su circolari INPS del 13 luglio 2026.">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="container">
+  <main>
+    <div class="hero">
+      <img src="logo.png" alt="Italia Data Factory">
+      <p class="eyebrow">Internal technical snapshot</p>
+      <h1>Evidenza pilot INPS</h1>
+      <p class="tagline">Metriche e metodologia pubblicabili dello snapshot IDF del 13 luglio 2026. Nessun testo trasformato INPS è pubblicato in questa pagina.</p>
+      <div class="links">
+        <a class="btn btn-primary" href="inps-pilot-evidence.json">Scarica JSON ↗</a>
+        <a class="btn" href="inps-pilot-evidence.json.sha256">Checksum JSON ↗</a>
+        <a class="btn" href="index.html">Torna alla landing</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Scope dello snapshot</h2>
+      <ul class="features">
+        <li><div><strong>Run</strong> — <code>pilot-v0.1</code>, eseguito il 13 luglio 2026.</div></li>
+        <li><div><strong>Fonte</strong> — RSS ufficiale INPS per circolari e messaggi.</div></li>
+        <li><div><strong>Corpus</strong> — 30 circolari pubblicate dal 9 aprile al 7 luglio 2026.</div></li>
+        <li><div><strong>Stato</strong> — snapshot tecnico interno, non dataset pubblico o consegnabile.</div></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Pipeline</h2>
+      <div class="metrics">
+        <div class="metric"><div class="value">50</div><div class="label">URL scoperti</div></div>
+        <div class="metric"><div class="value">30</div><div class="label">Documenti scaricati ed estratti</div></div>
+        <div class="metric"><div class="value">90</div><div class="label">Chunk interni</div></div>
+        <div class="metric"><div class="value">0</div><div class="label">Skip e quality warning</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Retrieval smoke test</h2>
+      <p>Cinque domande curate manualmente, senza URL, ID documento o risposta letterale nella query. Configurazione: hashed BOW 512 dimensioni, top-k 5, lexical weight 0.65, candidate-k 30.</p>
+      <div class="metrics">
+        <div class="metric"><div class="value">5/5</div><div class="label">Evidenza attesa nei primi 5 risultati</div></div>
+        <div class="metric"><div class="value">1.0</div><div class="label">Recall@5 su 5 query</div></div>
+        <div class="metric"><div class="value">0.65</div><div class="label">MRR; ranghi 1, 1, 4, 2, 2</div></div>
+      </div>
+      <div class="run-proof"><strong>Limite:</strong> cinque query costituiscono uno smoke test tecnico. Non sono una stima generalizzabile della qualità di produzione.</div>
+    </section>
+
+    <section>
+      <h2>Integrità</h2>
+      <p>Il manifest interno finale copre ricorsivamente 86 file regolari, inclusi RAG index, eval report e Knowledge Vault; il manifest stesso è escluso dal proprio hash. I symlink sono rifiutati.</p>
+      <p>I checksum dei report interni e dell'archivio sono pubblicati nel file JSON per rendere confrontabili future verifiche autorizzate, senza distribuire il contenuto.</p>
+    </section>
+
+    <section>
+      <h2>Diritti e indipendenza</h2>
+      <div class="problem">
+        <p><strong>Rights status: <code>review_required</code>. Redistribution: <code>not_approved</code>.</strong></p>
+        <p>Fino all'approvazione, un pilot esterno è limitato a metadata, URL ufficiali, checksum, report di cambiamento e processing nell'ambiente del cliente. Il contenuto trasformato INPS non viene venduto o redistribuito.</p>
+        <p>IDF è indipendente, non affiliato né approvato da INPS. Non fornisce consulenza legale, fiscale, previdenziale o paghe.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Italia Data Factory — <a href="https://github.com/francescofaraone">Francesco Faraone</a></p>
+  </footer>
+</div>
+</body>
+</html>
