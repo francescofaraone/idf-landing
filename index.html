@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Italia Data Factory — Pipeline viva per dataset AI italiani verificabili</title>
-  <meta name="description" content="Pipeline viva per monitorare fonti ufficiali italiane e trasformare documenti in dataset verificabili, versionati e pronti per RAG, training e benchmark.">
+  <title>Italia Data Factory — Verified Memory Feed per fonti ufficiali italiane</title>
+  <meta name="description" content="Feed verificabile e aggiornato di fonti ufficiali italiane per software paghe, HR, ERP e assistenti AI: provenance, checksum, quality report ed eval RAG.">
   <link rel="icon" href="logo.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -16,8 +16,8 @@
   <div class="hero">
     <img src="logo.png" alt="Francesco Faraone">
     <h1>Italia Data Factory</h1>
-    <p class="eyebrow">Living official-source pipeline</p>
-    <p class="tagline">Dataset e pipeline viva per fonti ufficiali italiane: discovery incrementale, OCR verificabile, manifest, checksum, quality report e indice RAG.</p>
+    <p class="eyebrow">Verified official-source memory feed</p>
+    <p class="tagline">Il layer dati ufficiale che alimenta software paghe, HR, ERP e assistenti AI con fonti aggiornate, citabili e auditabili.</p>
     <div class="links">
       <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Dataset pubblico ↗</a>
       <a class="btn" href="https://github.com/francescofaraone/italia-data-factory">Codice (privato) ↗</a>
@@ -65,19 +65,44 @@
       </div>
       <div class="source-card ready">
         <span class="status">OCR verified</span>
-        <h3>Agenzia Entrate circolari 2025</h3>
-        <p>Discovery multi-step delle pagine mensili, download PDF ufficiali e OCR GLM verificato su circolari fiscali reali.</p>
+        <h3>Agenzia Entrate circolari 2025–2026</h3>
+        <p>Discovery multi-step e OCR GLM full-page verificati localmente; la schedule automatica è sospesa in modalità fail-closed perché robots.txt restituisce HTTP 403.</p>
         <ul>
-          <li>15 PDF ufficiali scoperti nello smoke test</li>
+          <li>PDF ufficiali e pagine complete processati localmente</li>
           <li>GLM-OCR locale: quality_status=ready</li>
-          <li>runner GitHub: download/report anche senza OCR privato</li>
+          <li>esecuzione solo esplicita e conforme alla policy</li>
         </ul>
       </div>
     </div>
 
     <div class="run-proof">
-      <strong>Ultima prova tecnica:</strong> Agenzia Entrate OCR smoke: <code>downloaded=1</code>, <code>documents=1</code>, <code>chunks=2</code>, <code>quality_status=ready</code>. GitHub daily watch multi-fonte verificato con artifact JSON/Markdown.
+      <strong>Ultima prova tecnica:</strong> watcher giornaliero INPS operativo; Agenzia Entrate verificata localmente con OCR completo e mantenuta fail-closed fuori dalla schedule automatica. Ogni run produce artifact JSON/Markdown e quality evidence.
     </div>
+  </section>
+
+  <!-- INPS pilot -->
+  <section>
+    <h2>Verified Memory Feed — INPS</h2>
+    <p>Un pilot privato di 30 giorni per chi ha già un gestionale, un motore RAG o un assistente AI e non vuole mantenere internamente discovery, parsing, provenance, aggiornamenti ed eval delle circolari INPS.</p>
+
+    <div class="metrics">
+      <div class="metric"><div class="value">30</div><div class="label">Circolari INPS processate</div></div>
+      <div class="metric"><div class="value">90</div><div class="label">Chunk citabili con ID stabili</div></div>
+      <div class="metric"><div class="value">5/5</div><div class="label">Evidenze corrette in top 5</div></div>
+      <div class="metric"><div class="value">1.0</div><div class="label">Recall@5 misurato</div></div>
+    </div>
+
+    <ul class="features">
+      <li><div><strong>Aggiornamento giornaliero</strong> — monitor incrementale di circolari e messaggi INPS.</div></li>
+      <li><div><strong>Feed integrabile</strong> — JSONL, Parquet o Markdown con URL ufficiale, ID e checksum.</div></li>
+      <li><div><strong>Baseline verificabile</strong> — reference RAG, eval set e metriche riproducibili.</div></li>
+      <li><div><strong>Fail-closed</strong> — errori, diritti incerti e documenti non processabili vengono dichiarati.</div></li>
+    </ul>
+
+    <div class="run-proof">
+      <strong>Risultato reale:</strong> <code>documents=30</code>, <code>chunks=90</code>, <code>skipped=0</code>, <code>quality_warnings=0</code>, <code>Recall@5=1.0</code>, <code>MRR=0.65</code>. Pilot da €1.500 a €3.000 + IVA, secondo l'integrazione.
+    </div>
+    <p><small>Il pacchetto INPS è per valutazione privata: diritti <code>review_required</code>, redistribuzione non approvata fino al completamento della revisione.</small></p>
   </section>
 
   <!-- Public proof -->
@@ -147,19 +172,19 @@
 
   <!-- Early adopter offer -->
   <section>
-    <h2>3 slot early adopter</h2>
-    <p>Sto cercando 3 early adopter per testare una prima release su fonti reali:</p>
+    <h2>3 slot pilot INPS</h2>
+    <p>Sto cercando 3 partner con un prodotto già esistente — software paghe/HR, ERP o assistente AI — per validare il feed su un flusso reale:</p>
     <ul class="features">
-      <li><div><strong>Fonti fiscali</strong> — fatture, dichiarazioni, circolari dell'Agenzia delle Entrate.</div></li>
-      <li><div><strong>Fonti amministrative</strong> — delibere, moduli, atti PA, bandi regionali.</div></li>
-      <li><div><strong>Fonti documentali</strong> — contratti, verbali, documentazione tecnica.</div></li>
+      <li><div><strong>30 giorni</strong> — monitoraggio e feed incrementale INPS.</div></li>
+      <li><div><strong>Integrazione</strong> — formati e consegna concordati con il vostro stack.</div></li>
+      <li><div><strong>Accettazione misurabile</strong> — query reali, retrieval, citazioni e report finale.</div></li>
     </ul>
-    <p>Cosa riceve l'early adopter: una mini-release dedicata sul vostro caso reale in 2-4 settimane, con monitor fonte, manifest, checksum, OCR verificabile, quality report e indice RAG. Nessun impegno commerciale nella fase di test.</p>
+    <p>Prezzo: €1.500 + IVA per il pilot standard, fino a €3.000 + IVA con integrazione personalizzata o seconda fonte.</p>
   </section>
 
   <!-- Contact -->
   <div class="contact">
-    <p class="message">Ho sviluppato una pipeline viva che monitora fonti ufficiali italiane e le trasforma in dataset AI verificabili: manifest, checksum, OCR, quality report, release versionate e pacchetti riproducibili. Sto cercando 3 early adopter per testare una prima release su fonti fiscali, amministrative o documentali italiane.</p>
+    <p class="message">Avete già il prodotto AI o gestionale. IDF mantiene il layer dati ufficiale a monte: fonti aggiornate, provenance, checksum, quality report e baseline RAG. Sono disponibili 3 slot per il pilot Verified Memory Feed — INPS.</p>
     <div class="links">
       <a class="btn btn-primary" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Vedi il dataset pubblico ↗</a>
       <a class="btn" href="https://github.com/francescofaraone">Contatti ↗</a>
