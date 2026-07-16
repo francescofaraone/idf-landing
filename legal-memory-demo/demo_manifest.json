@@ -1,0 +1,12 @@
+{
+  "as_of_date": "2026-07-15",
+  "changed_pairs": 10,
+  "demo_id": "idf-normattiva-temporal-memory-demo-v1",
+  "documents": 20,
+  "license": "CC BY 4.0",
+  "pairs": 10,
+  "self_contained": true,
+  "source_organization": "Normattiva / IPZS",
+  "source_release": "normattiva-key-articles-multivigente-v0.1-internal",
+  "source_release_manifest_sha256": "468b9b2f78fe9298d67711e3f1dea08f9c3767231bb523c49b399d61b613d81f"
+}
