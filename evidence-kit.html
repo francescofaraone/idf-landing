@@ -48,6 +48,7 @@
     <p class="tagline">IDF è un percorso source-first per costruire un corpus italiano verificabile: fonti ufficiali, provenance, checksum, quality report, retrieval eval e diritti dichiarati prima di parlare di training o redistribuzione.</p>
     <div class="links">
       <a class="btn btn-primary" href="inps-corpus-retrieval-evidence.html">INPS retrieval evidence ↗</a>
+      <a class="btn" href="training-readiness.html">Training gate ↗</a>
       <a class="btn" href="legal-memory-demo/">Demo Normattiva ↗</a>
       <a class="btn" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Public sample ↗</a>
       <a class="btn" href="index.html">Landing ↗</a>
@@ -88,9 +89,9 @@
           <h3>INPS Corpus Retrieval Evidence</h3>
           <p>Corpus interno di circolari e messaggi INPS misurato con query naturali e profili RAG locali.</p>
           <ul>
-            <li>350 documenti unici</li>
-            <li>984 chunk deduplicati</li>
-            <li>best recall@10 0.95, MRR 0.773889</li>
+            <li>550 documenti unici</li>
+            <li>1548 chunk deduplicati</li>
+            <li>best recall@10 0.90, MRR 0.793750; top20 recall 0.95</li>
           </ul>
           <p><a href="inps-corpus-retrieval-evidence.html">Apri evidence page ↗</a></p>
         </article>
@@ -111,10 +112,10 @@
     <section>
       <h2>Numeri chiave ad oggi</h2>
       <div class="metric-band">
-        <div class="mini-metric"><div class="value">350</div><div class="label">documenti INPS ufficiali unici nel corpus interno</div></div>
-        <div class="mini-metric"><div class="value">984</div><div class="label">chunk deduplicati e indicizzati</div></div>
-        <div class="mini-metric"><div class="value">19/20</div><div class="label">query naturali INPS recuperate in top 10</div></div>
-        <div class="mini-metric"><div class="value">20/20</div><div class="label">query grounded recuperate in top 5</div></div>
+        <div class="mini-metric"><div class="value">550</div><div class="label">documenti INPS ufficiali unici nel corpus interno</div></div>
+        <div class="mini-metric"><div class="value">1548</div><div class="label">chunk deduplicati e indicizzati</div></div>
+        <div class="mini-metric"><div class="value">18/20</div><div class="label">query naturali INPS recuperate in top 10</div></div>
+        <div class="mini-metric"><div class="value">19/20</div><div class="label">query naturali recuperate in top 20</div></div>
       </div>
       <p class="small-note">Questi numeri non autorizzano redistribuzione o training: dimostrano retrieval e qualità della pipeline su una base interna rights-aware.</p>
     </section>

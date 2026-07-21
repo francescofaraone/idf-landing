@@ -20,6 +20,7 @@
     <p class="tagline">Una pipeline indipendente che aiuta software paghe, HR, ERP e assistenti AI a monitorare fonti ufficiali con provenance, checksum e qualità misurata.</p>
     <div class="links">
       <a class="btn btn-primary" href="evidence-kit.html">Evidence kit completo ↗</a>
+      <a class="btn" href="training-readiness.html">Training gate ↗</a>
       <a class="btn" href="inps-corpus-retrieval-evidence.html">RAG evidence INPS ↗</a>
       <a class="btn" href="legal-memory-demo/">Demo memoria normativa ↗</a>
       <a class="btn" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Dataset pubblico ↗</a>
@@ -99,10 +100,10 @@
     <p>Base tecnica per software paghe, HR, ERP o assistenti AI che vogliono monitorare INPS con provenance e retrieval misurato. Il corpus trasformato resta interno finché non c’è rights review: la prova pubblica espone metriche, metodo e link alle fonti ufficiali.</p>
 
     <div class="metrics">
-      <div class="metric"><div class="value">350</div><div class="label">Documenti INPS ufficiali unici</div></div>
-      <div class="metric"><div class="value">984</div><div class="label">Chunk deduplicati e indicizzati</div></div>
-      <div class="metric"><div class="value">19/20</div><div class="label">Query naturali in top 10</div></div>
-      <div class="metric"><div class="value">0.95</div><div class="label">Recall@10 profilo migliore</div></div>
+      <div class="metric"><div class="value">550</div><div class="label">Documenti INPS ufficiali unici</div></div>
+      <div class="metric"><div class="value">1548</div><div class="label">Chunk deduplicati e indicizzati</div></div>
+      <div class="metric"><div class="value">18/20</div><div class="label">Query naturali in top 10</div></div>
+      <div class="metric"><div class="value">0.90</div><div class="label">Recall@10 profilo top-10</div></div>
     </div>
 
     <ul class="features">
@@ -113,7 +114,7 @@
     </ul>
 
     <div class="run-proof">
-      <strong>Stato al 21 luglio 2026:</strong> 350 documenti INPS unici, 984 chunk deduplicati, best profile <code>ollama/nomic + lexical hybrid</code>, <code>Recall@10=0.95</code>, <code>MRR=0.773889</code> su 20 query naturali. <a href="inps-corpus-retrieval-evidence.html">Evidence page e fonti ↗</a>
+      <strong>Stato al 21 luglio 2026:</strong> 550 documenti INPS unici, 1548 chunk deduplicati, best top-10 profile <code>ollama/nomic + lexical hybrid</code>, <code>Recall@10=0.90</code>, <code>MRR=0.793750</code> su 20 query naturali. <a href="inps-corpus-retrieval-evidence.html">Evidence page e fonti ↗</a>
     </div>
     <div class="problem">
       <p><strong>Diritti: <code>review_required</code>. Redistribuzione: <code>not_approved</code>. Training: <code>not_approved</code>.</strong></p>

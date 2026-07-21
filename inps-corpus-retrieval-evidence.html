@@ -60,14 +60,14 @@
       <a class="btn" href="index.html">Landing IDF ↗</a>
     </div>
     <div class="proof-strip" aria-label="Metriche principali">
-      <div class="proof-tile"><div class="value">350</div><div class="label">documenti INPS ufficiali unici</div></div>
-      <div class="proof-tile"><div class="value">984</div><div class="label">chunk deduplicati e indicizzati</div></div>
-      <div class="proof-tile"><div class="value">19/20</div><div class="label">query naturali recuperate in top 10</div></div>
-      <div class="proof-tile"><div class="value">0.95</div><div class="label">recall@10 profilo migliore</div></div>
+      <div class="proof-tile"><div class="value">550</div><div class="label">documenti INPS ufficiali unici</div></div>
+      <div class="proof-tile"><div class="value">1548</div><div class="label">chunk deduplicati e indicizzati</div></div>
+      <div class="proof-tile"><div class="value">18/20</div><div class="label">query naturali recuperate in top 10</div></div>
+      <div class="proof-tile"><div class="value">0.90</div><div class="label">recall@10 profilo top-10</div></div>
     </div>
     <div class="badge-row">
       <span class="badge good">quality_status=ready</span>
-      <span class="badge">best profile: ollama/nomic + lexical hybrid</span>
+      <span class="badge">best top-10 profile: ollama/nomic + lexical hybrid</span>
       <span class="badge warn">training blocked until rights review</span>
       <span class="badge warn">redistribution not approved</span>
     </div>
@@ -80,7 +80,7 @@
         <p>Non prova che IDF sia “perfetto”. Prova una cosa più utile: una pipeline source-first può trasformare fonti ufficiali INPS in un indice RAG misurabile, con metriche riproducibili, query di esempio, checksum e limiti dichiarati.</p>
       </div>
       <ul class="features">
-        <li><div><strong>Corpus verificabile</strong> — 350 documenti unici e 984 chunk deduplicati prodotti da run locali con provenance URL.</div></li>
+        <li><div><strong>Corpus verificabile</strong> — 550 documenti unici e 1548 chunk deduplicati prodotti da run locali con provenance URL.</div></li>
         <li><div><strong>Retrieval misurato</strong> — eval naturale da 20 query, con più documenti attesi quando più atti sono validi.</div></li>
         <li><div><strong>Failure analysis inclusa</strong> — una query resta fuori top 10 nel profilo migliore: viene dichiarata, non nascosta.</div></li>
         <li><div><strong>Diritti conservativi</strong> — nessuna redistribuzione dei testi trasformati e nessun training finché non c’è rights review.</div></li>
@@ -98,33 +98,33 @@
             <td><strong>Natural 20Q</strong><br>domande più simili a richieste utente</td>
             <td>hashed 1024 + lexical 0.5</td>
             <td>18/20 · recall@10 0.90</td>
-            <td>0.7475</td>
+            <td>0.702083</td>
             <td class="review">review_required</td>
           </tr>
           <tr>
             <td><strong>Natural 20Q</strong></td>
-            <td>ollama/nomic semantic only</td>
-            <td>17/20 · recall@10 0.85</td>
-            <td>0.565417</td>
+            <td>ollama/nomic hybrid lexical 0.2</td>
+            <td>18/20 · recall@10 0.90</td>
+            <td>0.793750</td>
             <td class="review">review_required</td>
           </tr>
           <tr>
             <td><strong>Natural 20Q</strong></td>
             <td><strong>ollama/nomic + lexical 0.3</strong></td>
-            <td><span class="winner">19/20 · recall@10 0.95</span></td>
-            <td><span class="winner">0.773889</span></td>
+            <td><span class="winner">19/20 · recall@20 0.95</span></td>
+            <td><span class="winner">0.759167</span></td>
             <td class="review">review_required</td>
           </tr>
           <tr>
             <td><strong>Grounded 20Q</strong><br>query da titoli/oggetti reali</td>
             <td>hashed or ollama hybrid</td>
             <td>20/20 · recall@5 1.00</td>
-            <td>0.975</td>
+            <td>0.95</td>
             <td class="winner">pass</td>
           </tr>
         </tbody>
       </table>
-      <p class="small-note">Il profilo semantico puro non batte il profilo ibrido: su circolari normative, il segnale lessicale rimane molto forte.</p>
+      <p class="small-note">Il profilo ibrido migliora il ranking, ma le query naturali restano intentionally review_required: la pagina espone anche i failure invece di nasconderli.</p>
     </section>
 
     <section>

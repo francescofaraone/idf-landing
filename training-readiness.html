@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDF — Training Readiness Gate</title>
+  <meta name="description" content="Training-readiness gate IDF: corpus INPS technicalmente training-shaped, ma training e redistribuzione bloccati fino a rights review.">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .hero { text-align: left; }
+    .hero img { display: none; }
+    .hero .tagline { margin-left: 0; max-width: 780px; }
+    .hero .links { justify-content: flex-start; }
+    .eyebrow { color: var(--accent); font-weight: 760; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; margin-bottom: 12px; }
+    .verdict { border: 1px solid rgba(210,153,34,.55); background: rgba(210,153,34,.08); border-radius: 16px; padding: 24px; margin: 28px 0; }
+    .verdict h2 { color: var(--orange); margin-bottom: 10px; }
+    .verdict p { color: var(--text); }
+    .matrix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+    .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .tile .value { font-size: 2rem; font-weight: 780; color: var(--text); letter-spacing: -.04em; }
+    .tile .label { color: var(--text-muted); font-size: .86rem; margin-top: 8px; }
+    .checklist { display: grid; gap: 12px; }
+    .check { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; color: var(--text-muted); }
+    .check strong { color: var(--text); }
+    .ok { color: var(--green); font-weight: 750; }
+    .block { color: var(--orange); font-weight: 750; }
+    table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+    th, td { padding: 14px 12px; border-bottom: 1px solid var(--border); text-align: left; color: var(--text-muted); }
+    th { color: var(--text); background: #101722; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+    tr:last-child td { border-bottom: 0; }
+    @media (max-width: 760px) { .matrix { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="hero">
+    <p class="eyebrow">Italia Data Factory · training readiness</p>
+    <h1>Training-shaped, non training-authorized</h1>
+    <p class="tagline">IDF ha portato il corpus INPS a una forma tecnica utilizzabile per eval/training pipeline quando i diritti lo consentiranno. Oggi il training gate resta chiuso: è una scelta di qualità e difendibilità commerciale.</p>
+    <div class="links">
+      <a class="btn btn-primary" href="inps-corpus-retrieval-evidence.html">RAG evidence ↗</a>
+      <a class="btn" href="evidence-kit.html">Evidence kit ↗</a>
+      <a class="btn" href="inps-corpus-retrieval-evidence.json">Evidence JSON ↗</a>
+    </div>
+    <div class="verdict">
+      <h2>Verdetto</h2>
+      <p><strong>Pronto come struttura tecnica:</strong> sì. <strong>Pronto legalmente per training o redistribuzione pubblica:</strong> no, non ancora.</p>
+      <p>Il corpus è normalizzato, deduplicato, indicizzato, versionabile e misurato. Tutti i record restano però bloccati da `blocked_until_rights_review`.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Stato corpus</h2>
+      <div class="matrix">
+        <div class="tile"><div class="value">550</div><div class="label">documenti INPS ufficiali unici</div></div>
+        <div class="tile"><div class="value">1548</div><div class="label">chunk deduplicati</div></div>
+        <div class="tile"><div class="value">3.1MB</div><div class="label">Parquet locale generato</div></div>
+        <div class="tile"><div class="value">12</div><div class="label">run combinati dal corpus gate</div></div>
+        <div class="tile"><div class="value">ready</div><div class="label">quality_status</div></div>
+        <div class="tile"><div class="value">0</div><div class="label">training eligible records</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Training gate</h2>
+      <table>
+        <thead><tr><th>Campo</th><th>Valore</th><th>Interpretazione</th></tr></thead>
+        <tbody>
+          <tr><td>training_eligible_documents</td><td>0</td><td>Tutti i documenti bloccati fino a rights review.</td></tr>
+          <tr><td>training_blocked_documents</td><td>550</td><td>Asset tecnico disponibile, autorizzazione non implicita.</td></tr>
+          <tr><td>training_eligible_chunks</td><td>0</td><td>Nessun chunk usabile per training pubblico.</td></tr>
+          <tr><td>training_blocked_chunks</td><td>1548</td><td>Può servire per RAG/eval interno rights-aware.</td></tr>
+          <tr><td>blocked_reason</td><td>blocked_until_rights_review</td><td>Fail-closed by design.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Cosa è già completo tecnicamente</h2>
+      <div class="checklist">
+        <div class="check"><span class="ok">✓</span> <strong>Discovery controllata</strong> — RSS + archive search API, lotti manuali p5→p50, nessuno scheduler archive automatico.</div>
+        <div class="check"><span class="ok">✓</span> <strong>Provenance</strong> — source URL e document title preservati per ogni documento.</div>
+        <div class="check"><span class="ok">✓</span> <strong>Deduplica</strong> — 600 input docs → 550 documenti unici; 1698 chunk input → 1548 accettati.</div>
+        <div class="check"><span class="ok">✓</span> <strong>Formato training-shaped</strong> — JSONL, Parquet, manifest, quality report, sample review, RAG-only JSONL.</div>
+        <div class="check"><span class="ok">✓</span> <strong>Eval retrieval</strong> — natural 20Q e grounded 20Q su hashed/Ollama hybrid.</div>
+        <div class="check"><span class="block">!</span> <strong>Rights review</strong> — passaggio mancante per autorizzare training o redistribuzione.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Come venderlo senza mentire</h2>
+      <p>Frase corretta: “Abbiamo una pipeline che produce un corpus INPS training-shaped e RAG-ready, con 550 documenti ufficiali, 1548 chunk, deduplica e retrieval eval. Il training è bloccato finché non completiamo rights review o lavoriamo customer-side in ambiente autorizzato.”</p>
+      <p>Frase da evitare: “Dataset INPS pronto per addestrare un LLM pubblico”. Non è ancora difendibile.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>IDF Training Readiness Gate · <a href="evidence-kit.html">Evidence kit</a> · <a href="index.html">Landing</a></p>
+  </footer>
+</div>
+</body>
+</html>
