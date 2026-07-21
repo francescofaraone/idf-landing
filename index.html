@@ -19,10 +19,10 @@
     <p class="eyebrow">Verified official-source memory pipeline</p>
     <p class="tagline">Una pipeline indipendente che aiuta software paghe, HR, ERP e assistenti AI a monitorare fonti ufficiali con provenance, checksum e qualità misurata.</p>
     <div class="links">
-      <a class="btn btn-primary" href="legal-memory-demo/">Demo memoria normativa ↗</a>
-      <a class="btn" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Dataset pubblico ↗</a>
-      <a class="btn" href="inps-pilot-evidence.html">Evidenza pilot INPS ↗</a>
+      <a class="btn btn-primary" href="evidence-kit.html">Evidence kit completo ↗</a>
       <a class="btn" href="inps-corpus-retrieval-evidence.html">RAG evidence INPS ↗</a>
+      <a class="btn" href="legal-memory-demo/">Demo memoria normativa ↗</a>
+      <a class="btn" href="https://huggingface.co/datasets/ceccofar/idf-v0.1-public-sample">Dataset pubblico ↗</a>
     </div>
   </div>
 
@@ -93,30 +93,30 @@
     </div>
   </section>
 
-  <!-- INPS pilot -->
+  <!-- INPS corpus -->
   <section>
     <h2>Verified Memory Feed — INPS</h2>
-    <p>Pilot indipendente di 30 giorni per chi ha già un gestionale, un motore RAG o un assistente AI e vuole misurare discovery, provenance e aggiornamento delle fonti INPS nel proprio ambiente autorizzato.</p>
+    <p>Base tecnica per software paghe, HR, ERP o assistenti AI che vogliono monitorare INPS con provenance e retrieval misurato. Il corpus trasformato resta interno finché non c’è rights review: la prova pubblica espone metriche, metodo e link alle fonti ufficiali.</p>
 
     <div class="metrics">
-      <div class="metric"><div class="value">30</div><div class="label">Circolari nello snapshot interno</div></div>
-      <div class="metric"><div class="value">90</div><div class="label">Chunk interni, non distribuiti</div></div>
-      <div class="metric"><div class="value">5/5</div><div class="label">Evidenza in top 5 su cinque query</div></div>
-      <div class="metric"><div class="value">1.0</div><div class="label">Recall@5 sullo smoke test</div></div>
+      <div class="metric"><div class="value">350</div><div class="label">Documenti INPS ufficiali unici</div></div>
+      <div class="metric"><div class="value">984</div><div class="label">Chunk deduplicati e indicizzati</div></div>
+      <div class="metric"><div class="value">19/20</div><div class="label">Query naturali in top 10</div></div>
+      <div class="metric"><div class="value">0.95</div><div class="label">Recall@10 profilo migliore</div></div>
     </div>
 
     <ul class="features">
-      <li><div><strong>Aggiornamento giornaliero</strong> — monitor incrementale di circolari e messaggi INPS.</div></li>
-      <li><div><strong>Consegna attuale</strong> — metadata, URL ufficiali, checksum e delta report.</div></li>
-      <li><div><strong>Processing customer-side</strong> — reference RAG ed eval nell'ambiente autorizzato del cliente.</div></li>
-      <li><div><strong>Fail-closed</strong> — errori, diritti incerti e documenti non processabili vengono dichiarati.</div></li>
+      <li><div><strong>Archivio vivo</strong> — discovery RSS e archive search API con run incrementali.</div></li>
+      <li><div><strong>Corpus gate</strong> — deduplica cross-run, quality report, JSONL/Parquet e training bloccato di default.</div></li>
+      <li><div><strong>Retrieval evidence</strong> — hashed baseline, Ollama/nomic hybrid, query naturali, MRR e failure analysis.</div></li>
+      <li><div><strong>Processing customer-side</strong> — per pilot esterni: metadata, URL ufficiali, checksum e valutazione nell'ambiente autorizzato del cliente.</div></li>
     </ul>
 
     <div class="run-proof">
-      <strong>Snapshot interno del 13 luglio 2026:</strong> 30 circolari pubblicate dal 9 aprile al 7 luglio 2026, 90 chunk interni, zero skip, zero quality warning. Smoke eval su cinque query: <code>Recall@5=1.0</code>, <code>MRR=0.65</code>, ranghi <code>1,1,4,2,2</code>. Queste metriche non sono una stima generalizzabile della qualità di produzione. <a href="inps-pilot-evidence.html">Metodologia e checksum ↗</a>
+      <strong>Stato al 21 luglio 2026:</strong> 350 documenti INPS unici, 984 chunk deduplicati, best profile <code>ollama/nomic + lexical hybrid</code>, <code>Recall@10=0.95</code>, <code>MRR=0.773889</code> su 20 query naturali. <a href="inps-corpus-retrieval-evidence.html">Evidence page e fonti ↗</a>
     </div>
     <div class="problem">
-      <p><strong>Diritti: <code>review_required</code>. Redistribuzione: <code>not_approved</code>.</strong></p>
+      <p><strong>Diritti: <code>review_required</code>. Redistribuzione: <code>not_approved</code>. Training: <code>not_approved</code>.</strong></p>
       <p>Fino all'approvazione non vendiamo né redistribuiamo documenti o chunk trasformati INPS. Il pilot esterno è limitato a metadata, link ufficiali, checksum, report e processing customer-side.</p>
       <p>IDF è indipendente, non affiliato né approvato da INPS. Non fornisce consulenza legale, fiscale, previdenziale o paghe.</p>
     </div>
@@ -203,7 +203,8 @@
   <div class="contact">
     <p class="message">Avete già il prodotto AI o gestionale. IDF può ridurre il lavoro upstream di monitoraggio, provenance e verifica, senza sostituire il vostro software e senza redistribuire contenuti non autorizzati.</p>
     <div class="links">
-      <a class="btn btn-primary" href="inps-pilot-evidence.html">Esamina l'attestazione tecnica ↗</a>
+      <a class="btn btn-primary" href="evidence-kit.html">Apri evidence kit completo ↗</a>
+      <a class="btn" href="inps-corpus-retrieval-evidence.html">Esamina RAG evidence INPS ↗</a>
       <a class="btn" href="https://github.com/francescofaraone">Profilo e contatti GitHub ↗</a>
     </div>
   </div>
