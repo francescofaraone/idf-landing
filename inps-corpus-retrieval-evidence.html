@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDF — INPS Corpus Retrieval Evidence</title>
+  <meta name="description" content="Evidenza retrieval per corpus INPS Italia Data Factory: 350 documenti ufficiali, 984 chunk deduplicati, eval RAG naturale con recall@10 0.95.">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    :root { --purple: #a371f7; --red: #f85149; --cyan: #39c5cf; }
+    .hero { text-align: left; padding-bottom: 40px; }
+    .hero img { display: none; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; margin-bottom: 12px; }
+    .hero .tagline { margin-left: 0; max-width: 760px; }
+    .hero .links { justify-content: flex-start; }
+    .proof-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 28px 0 8px; }
+    .proof-tile { background: linear-gradient(180deg, rgba(88,166,255,.10), rgba(88,166,255,.03)); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .proof-tile .value { color: var(--text); font-size: 2rem; line-height: 1; font-weight: 750; letter-spacing: -.04em; }
+    .proof-tile .label { color: var(--text-muted); font-size: .84rem; margin-top: 8px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+    .badge { border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); border-radius: 999px; padding: 6px 10px; font-size: .82rem; }
+    .badge.good { color: var(--green); border-color: rgba(63,185,80,.5); }
+    .badge.warn { color: var(--orange); border-color: rgba(210,153,34,.55); }
+    .comparison { width: 100%; border-collapse: collapse; margin: 24px 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); }
+    .comparison th, .comparison td { border-bottom: 1px solid var(--border); padding: 14px 12px; text-align: left; vertical-align: top; }
+    .comparison th { background: #0f1621; color: var(--text); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+    .comparison td { color: var(--text-muted); background: rgba(22,27,34,.74); }
+    .comparison tr:last-child td { border-bottom: 0; }
+    .comparison strong { color: var(--text); }
+    .winner { color: var(--green); font-weight: 700; }
+    .review { color: var(--orange); font-weight: 700; }
+    .example-grid { display: grid; gap: 14px; }
+    .example { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .example .q { color: var(--text); font-weight: 650; margin-bottom: 10px; }
+    .example .hit { color: var(--text-muted); font-size: .95rem; }
+    .example .hit a { color: var(--accent); text-decoration: none; }
+    .example .hit a:hover { text-decoration: underline; }
+    .rank { display: inline-flex; min-width: 62px; justify-content: center; border-radius: 999px; padding: 3px 8px; margin-right: 8px; color: #0d1117; background: var(--green); font-weight: 750; font-size: .78rem; }
+    .method { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .method-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .method-card h3 { margin-bottom: 8px; }
+    .method-card p, .method-card li { color: var(--text-muted); }
+    .small-note { font-size: .88rem; color: var(--text-muted); }
+    .callout { background: rgba(210,153,34,.08); border: 1px solid rgba(210,153,34,.45); border-radius: 12px; padding: 18px; color: var(--text-muted); }
+    .callout strong { color: var(--orange); }
+    @media (max-width: 820px) { .proof-strip, .method { grid-template-columns: 1fr 1fr; } .comparison { font-size: .9rem; } }
+    @media (max-width: 560px) { .proof-strip, .method { grid-template-columns: 1fr; } .hero { padding-top: 48px; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="hero">
+    <p class="eyebrow">Italia Data Factory · retrieval evidence</p>
+    <h1>INPS Corpus Retrieval Evidence</h1>
+    <p class="tagline">Un corpus interno di circolari e messaggi INPS non viene valutato a sensazione: qui ci sono dimensione, metodo, metriche retrieval e failure analysis. Nessun documento trasformato viene redistribuito.</p>
+    <div class="links">
+      <a class="btn btn-primary" href="inps-corpus-retrieval-evidence.json">Evidence JSON ↗</a>
+      <a class="btn" href="inps-corpus-retrieval-evidence.json.sha256">SHA-256 ↗</a>
+      <a class="btn" href="index.html">Landing IDF ↗</a>
+    </div>
+    <div class="proof-strip" aria-label="Metriche principali">
+      <div class="proof-tile"><div class="value">350</div><div class="label">documenti INPS ufficiali unici</div></div>
+      <div class="proof-tile"><div class="value">984</div><div class="label">chunk deduplicati e indicizzati</div></div>
+      <div class="proof-tile"><div class="value">19/20</div><div class="label">query naturali recuperate in top 10</div></div>
+      <div class="proof-tile"><div class="value">0.95</div><div class="label">recall@10 profilo migliore</div></div>
+    </div>
+    <div class="badge-row">
+      <span class="badge good">quality_status=ready</span>
+      <span class="badge">best profile: ollama/nomic + lexical hybrid</span>
+      <span class="badge warn">training blocked until rights review</span>
+      <span class="badge warn">redistribution not approved</span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Che cosa dimostra questa pagina</h2>
+      <div class="problem">
+        <p>Non prova che IDF sia “perfetto”. Prova una cosa più utile: una pipeline source-first può trasformare fonti ufficiali INPS in un indice RAG misurabile, con metriche riproducibili, query di esempio, checksum e limiti dichiarati.</p>
+      </div>
+      <ul class="features">
+        <li><div><strong>Corpus verificabile</strong> — 350 documenti unici e 984 chunk deduplicati prodotti da run locali con provenance URL.</div></li>
+        <li><div><strong>Retrieval misurato</strong> — eval naturale da 20 query, con più documenti attesi quando più atti sono validi.</div></li>
+        <li><div><strong>Failure analysis inclusa</strong> — una query resta fuori top 10 nel profilo migliore: viene dichiarata, non nascosta.</div></li>
+        <li><div><strong>Diritti conservativi</strong> — nessuna redistribuzione dei testi trasformati e nessun training finché non c’è rights review.</div></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Risultati retrieval</h2>
+      <table class="comparison">
+        <thead>
+          <tr><th>Eval</th><th>Profilo</th><th>Risultato</th><th>MRR</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Natural 20Q</strong><br>domande più simili a richieste utente</td>
+            <td>hashed 1024 + lexical 0.5</td>
+            <td>18/20 · recall@10 0.90</td>
+            <td>0.7475</td>
+            <td class="review">review_required</td>
+          </tr>
+          <tr>
+            <td><strong>Natural 20Q</strong></td>
+            <td>ollama/nomic semantic only</td>
+            <td>17/20 · recall@10 0.85</td>
+            <td>0.565417</td>
+            <td class="review">review_required</td>
+          </tr>
+          <tr>
+            <td><strong>Natural 20Q</strong></td>
+            <td><strong>ollama/nomic + lexical 0.3</strong></td>
+            <td><span class="winner">19/20 · recall@10 0.95</span></td>
+            <td><span class="winner">0.773889</span></td>
+            <td class="review">review_required</td>
+          </tr>
+          <tr>
+            <td><strong>Grounded 20Q</strong><br>query da titoli/oggetti reali</td>
+            <td>hashed or ollama hybrid</td>
+            <td>20/20 · recall@5 1.00</td>
+            <td>0.975</td>
+            <td class="winner">pass</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small-note">Il profilo semantico puro non batte il profilo ibrido: su circolari normative, il segnale lessicale rimane molto forte.</p>
+    </section>
+
+    <section>
+      <h2>Query di esempio → fonte ufficiale</h2>
+      <div class="example-grid">
+        <article class="example">
+          <div class="q">Come cambia il versamento al Fondo di Tesoreria TFR e quale requisito dimensionale conta?</div>
+          <div class="hit"><span class="rank">rank 1</span><a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.02.circolare-numero-12-del-05-02-2026_15160.html">Circolare numero 12 del 05-02-2026 ↗</a></div>
+        </article>
+        <article class="example">
+          <div class="q">Come si presenta la domanda per il bonus nuovi nati da 1000 euro e quali messaggi INPS lo aggiornano?</div>
+          <div class="hit"><span class="rank">rank 1</span><a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.messaggio-numero-1268-del-14-04-2026_15236.html">Messaggio numero 1268 del 14-04-2026 ↗</a></div>
+        </article>
+        <article class="example">
+          <div class="q">Il ticket di licenziamento è dovuto per lavoratori detenuti?</div>
+          <div class="hit"><span class="rank">rank 1</span><a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-59-del-20-05-2026_15263.html">Circolare numero 59 del 20-05-2026 ↗</a></div>
+        </article>
+        <article class="example">
+          <div class="q">Come funziona la Campagna RedEst per pensionati residenti all’estero nel 2026?</div>
+          <div class="hit"><span class="rank">rank 1</span><a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.messaggio-numero-2099-del-24-06-2026_15299.html">Messaggio numero 2099 del 24-06-2026 ↗</a></div>
+        </article>
+        <article class="example">
+          <div class="q">Dove posso trovare le attestazioni fiscali dei pagamenti per riscatti e ricongiunzioni?</div>
+          <div class="hit"><span class="rank">rank 1</span><a href="https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.03.messaggio-numero-965-del-19-03-2026_15202.html">Messaggio numero 965 del 19-03-2026 ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Metodo</h2>
+      <div class="method">
+        <div class="method-card">
+          <h3>Indice locale</h3>
+          <p>Due profili confrontati:</p>
+          <ul>
+            <li>deterministic hashed bag-of-words, 1024 dimensioni;</li>
+            <li>Ollama <code>nomic-embed-text:latest</code>, 768 dimensioni.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>Hardening embedding</h3>
+          <p>Alcuni chunk lunghi superavano il contesto embedding. Il backend semantico tronca a 2000 caratteri per chunk e invia batch da 1 input.</p>
+        </div>
+        <div class="method-card">
+          <h3>Eval naturale</h3>
+          <p>20 domande in italiano, non semplici titoli. Quando più atti sono pertinenti, l’eval accetta più <code>expected_document_ids</code>.</p>
+        </div>
+        <div class="method-card">
+          <h3>Limite dichiarato</h3>
+          <p>Una query ADI resta <code>review_required</code>: il top hit è pertinente, ma non uno degli expected curati.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Diritti e uso consentito</h2>
+      <div class="callout">
+        <p><strong>Redistribuzione: not_approved. Training: not_approved.</strong></p>
+        <p>Questa pagina pubblica metriche, metodologia e link alle fonti ufficiali. Non pubblica il corpus trasformato, i chunk o un dataset INPS scaricabile. Qualunque uso per training o redistribuzione richiede una rights review separata.</p>
+        <p>IDF è indipendente: non è affiliato, approvato o sponsorizzato da INPS. Non fornisce consulenza previdenziale, paghe, fiscale o legale.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Perché è utile</h2>
+      <p>Per software house paghe, HR, ERP e integratori RAG, il valore non è “abbiamo copiato documenti”. Il valore è sapere quali fonti sono state viste, quali documenti sono recuperabili, quali query falliscono, e dove serve revisione prima di mettere tutto in produzione.</p>
+      <div class="links">
+        <a class="btn btn-primary" href="inps-corpus-retrieval-evidence.json">Scarica evidence JSON ↗</a>
+        <a class="btn" href="inps-pilot-evidence.html">Vedi pilot INPS precedente ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Italia Data Factory — di <a href="https://github.com/francescofaraone">Francesco Faraone</a> · <a href="https://huggingface.co/ceccofar">Hugging Face</a> · <a href="index.html">Landing</a></p>
+  </footer>
+</div>
+</body>
+</html>

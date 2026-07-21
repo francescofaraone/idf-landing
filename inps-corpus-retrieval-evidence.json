@@ -1,0 +1,129 @@
+{
+  "artifact": "IDF INPS Corpus Retrieval Evidence",
+  "corpus": {
+    "deduplicated_chunks": 984,
+    "quality_status": "ready",
+    "source": "INPS circolari e messaggi",
+    "training_eligible_chunks": 0,
+    "training_status": "blocked_until_rights_review",
+    "unique_documents": 350
+  },
+  "evals": {
+    "grounded_hashed_hybrid": {
+      "failed": 0,
+      "mrr": 0.975,
+      "passed": 20,
+      "queries": 20,
+      "recall_at_k": 1.0,
+      "status": "pass",
+      "top_k": 5
+    },
+    "grounded_ollama_hybrid": {
+      "failed": 0,
+      "mrr": 0.975,
+      "passed": 20,
+      "queries": 20,
+      "recall_at_k": 1.0,
+      "status": "pass",
+      "top_k": 5
+    },
+    "natural_hashed_hybrid": {
+      "failed": 2,
+      "mrr": 0.7475,
+      "passed": 18,
+      "queries": 20,
+      "recall_at_k": 0.9,
+      "status": "review_required",
+      "top_k": 10
+    },
+    "natural_ollama_hybrid": {
+      "failed": 1,
+      "mrr": 0.773889,
+      "passed": 19,
+      "queries": 20,
+      "recall_at_k": 0.95,
+      "status": "review_required",
+      "top_k": 10
+    }
+  },
+  "examples": [
+    {
+      "document_title": "Circolare numero 12 del 05-02-2026",
+      "passed": true,
+      "query": "Come cambia il versamento al Fondo di Tesoreria TFR e quale requisito dimensionale conta?",
+      "rank": 1,
+      "score": 0.594217,
+      "source_uri": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.02.circolare-numero-12-del-05-02-2026_15160.html",
+      "top_chunk_id": "1431ed6dca864ad8befa8b025a61aef254658f356b71945fa2187f02d4e453ca",
+      "top_document_id": "b855b52539ea762088bea46280f4c257fe3065b034a3fa89a92257d1f50d1386"
+    },
+    {
+      "document_title": "Messaggio numero 1268 del 14-04-2026",
+      "passed": true,
+      "query": "Come si presenta la domanda per il bonus nuovi nati da 1000 euro e quali messaggi INPS lo aggiornano?",
+      "rank": 1,
+      "score": 0.648882,
+      "source_uri": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.04.messaggio-numero-1268-del-14-04-2026_15236.html",
+      "top_chunk_id": "db22bd56d7e73a5f7926514936b537d4970b44aff4dc87204711f2a8fc7b1d98",
+      "top_document_id": "f08a994c51cf57db89ba5d19b89efa653b0cfda5c0c418b8d15fba6efda813d3"
+    },
+    {
+      "document_title": "Circolare numero 59 del 20-05-2026",
+      "passed": true,
+      "query": "Il ticket di licenziamento è dovuto per lavoratori detenuti?",
+      "rank": 1,
+      "score": 0.627998,
+      "source_uri": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.05.circolare-numero-59-del-20-05-2026_15263.html",
+      "top_chunk_id": "053b5651b4091ed3711d3d3e91995b4e7124cae1b883118bb9ffb04b40bf21d3",
+      "top_document_id": "7234971991a869285c0bdbceb813f73056895f1cf13ac0e18d5c513e42aff902"
+    },
+    {
+      "document_title": "Messaggio numero 2099 del 24-06-2026",
+      "passed": true,
+      "query": "Come funziona la Campagna RedEst per pensionati residenti all'estero nel 2026?",
+      "rank": 1,
+      "score": 0.661469,
+      "source_uri": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.06.messaggio-numero-2099-del-24-06-2026_15299.html",
+      "top_chunk_id": "d5d3d3e4d585a1ede43011742920631cdcfcc444b53aa5d0f48588b93a998c3c",
+      "top_document_id": "25c281f7bb744870035020ab6c5eb911b476b38d618cdb1939c81b14c9546b41"
+    },
+    {
+      "document_title": "Messaggio numero 965 del 19-03-2026",
+      "passed": true,
+      "query": "Dove posso trovare le attestazioni fiscali dei pagamenti per riscatti e ricongiunzioni?",
+      "rank": 1,
+      "score": 0.705637,
+      "source_uri": "https://www.inps.it/it/it/inps-comunica/atti/circolari-messaggi-e-normativa/dettaglio.circolari-e-messaggi.2026.03.messaggio-numero-965-del-19-03-2026_15202.html",
+      "top_chunk_id": "bb62f3908a1a7e5f938a2d92f655171424a750b84352344988a7aafabf5958da",
+      "top_document_id": "08234049d56f808ad346040c294d303855f275315d2947461b386592915518ac"
+    }
+  ],
+  "generated_at": "2026-07-21",
+  "indexes": {
+    "hashed_hybrid": {
+      "dimensions": 1024,
+      "embedding": "deterministic_hashed_bow_v1",
+      "lexical_weight": 0.5,
+      "vector_store": "local"
+    },
+    "ollama_nomic_hybrid": {
+      "dimensions": 768,
+      "embedding": "ollama_embed_v1",
+      "embedding_model": "nomic-embed-text:latest",
+      "lexical_weight": 0.3,
+      "note": "Local Ollama endpoint; chunk text truncated to 2000 chars for embedding context safety.",
+      "vector_store": "local"
+    }
+  },
+  "known_failure": {
+    "best_profile": "ollama_nomic_hybrid",
+    "query": "Quale circolare spiega i requisiti dell’Assegno di inclusione per permesso di soggiorno per casi speciali?",
+    "reason": "Top hit is ADI/Assegno-inclusione related but not one of the curated expected documents; needs manual expected-set review."
+  },
+  "public_page": "https://francescofaraone.github.io/idf-landing/inps-corpus-retrieval-evidence.html",
+  "rights": {
+    "reason": "Source-level rights review required before public redistribution/training. Evidence page publishes metrics and official source links, not transformed corpus records.",
+    "redistribution": "not_approved",
+    "training": "not_approved"
+  }
+}
