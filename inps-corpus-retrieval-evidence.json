@@ -23,6 +23,15 @@
       "status": "pass",
       "top_k": 5
     },
+    "grounded_ollama_top5": {
+      "failed": 0,
+      "mrr": 0.875,
+      "passed": 20,
+      "queries": 20,
+      "recall_at_k": 1.0,
+      "status": "pass",
+      "top_k": 5
+    },
     "natural_hashed_top10": {
       "failed": 4,
       "mrr": 0.599167,
@@ -38,6 +47,24 @@
       "passed": 18,
       "queries": 20,
       "recall_at_k": 0.9,
+      "status": "review_required",
+      "top_k": 20
+    },
+    "natural_ollama_top10": {
+      "failed": 3,
+      "mrr": 0.6225,
+      "passed": 17,
+      "queries": 20,
+      "recall_at_k": 0.85,
+      "status": "review_required",
+      "top_k": 10
+    },
+    "natural_ollama_top20": {
+      "failed": 1,
+      "mrr": 0.651716,
+      "passed": 19,
+      "queries": 20,
+      "recall_at_k": 0.95,
       "status": "review_required",
       "top_k": 20
     }
@@ -102,16 +129,31 @@
       "embedding": "deterministic_hashed_bow_v1",
       "lexical_weight": 0.5,
       "vector_store": "local"
+    },
+    "ollama_nomic_hybrid": {
+      "corpus_checkpoint": "p100",
+      "dimensions": 768,
+      "embedding": "ollama_embed_v1",
+      "embedding_model": "nomic-embed-text:latest",
+      "lexical_weight_top10": 0.2,
+      "lexical_weight_top20": 0.3,
+      "note": "Local Ollama index built successfully on 2941 chunks.",
+      "vector_store": "local"
     }
   },
   "known_failures": {
-    "natural_top10_hashed": [
+    "hashed_natural_top10": [
       "ammortizzatore unico emergenze alluvionali / DL 25/2026",
       "Fondo pensione Espero lavoratori scuola",
       "two additional p100 natural queries require review"
     ],
-    "natural_top20_hashed": [
-      "two p100 natural queries remain outside top20"
+    "ollama_natural_top10": [
+      "NASpI detenuti",
+      "Assegno di inclusione casi speciali",
+      "ammortizzatore unico domanda datore di lavoro"
+    ],
+    "ollama_natural_top20": [
+      "Assegno di inclusione per permesso di soggiorno casi speciali"
     ]
   },
   "notes": {

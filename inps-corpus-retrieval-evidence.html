@@ -62,12 +62,12 @@
     <div class="proof-strip" aria-label="Metriche principali">
       <div class="proof-tile"><div class="value">1050</div><div class="label">documenti INPS ufficiali unici</div></div>
       <div class="proof-tile"><div class="value">2941</div><div class="label">chunk deduplicati e indicizzati</div></div>
-      <div class="proof-tile"><div class="value">16/20</div><div class="label">query naturali recuperate in top 10</div></div>
-      <div class="proof-tile"><div class="value">0.80</div><div class="label">recall@10 hashed p100</div></div>
+      <div class="proof-tile"><div class="value">17/20</div><div class="label">query naturali recuperate in top 10</div></div>
+      <div class="proof-tile"><div class="value">0.85</div><div class="label">recall@10 ollama p100</div></div>
     </div>
     <div class="badge-row">
       <span class="badge good">quality_status=ready</span>
-      <span class="badge">verified p100 profile: hashed 1024 + lexical hybrid</span>
+      <span class="badge">verified p100 best profile: ollama/nomic + lexical hybrid</span>
       <span class="badge warn">training blocked until rights review</span>
       <span class="badge warn">redistribution not approved</span>
     </div>
@@ -82,7 +82,7 @@
       <ul class="features">
         <li><div><strong>Corpus verificabile</strong> — 1050 documenti unici e 2941 chunk deduplicati prodotti da run locali con provenance URL.</div></li>
         <li><div><strong>Retrieval misurato</strong> — eval naturale da 20 query, con più documenti attesi quando più atti sono validi.</div></li>
-        <li><div><strong>Failure analysis inclusa</strong> — quattro query naturali restano fuori top 10 nel profilo p100: vengono dichiarate, non nascoste.</div></li>
+        <li><div><strong>Failure analysis inclusa</strong> — tre query naturali restano fuori top 10 nel profilo Ollama p100: vengono dichiarate, non nascoste.</div></li>
         <li><div><strong>Diritti conservativi</strong> — nessuna redistribuzione dei testi trasformati e nessun training finché non c’è rights review.</div></li>
       </ul>
     </section>
@@ -95,17 +95,24 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Natural 20Q</strong><br>domande più simili a richieste utente</td>
+            <td><strong>Natural 20Q</strong><br>domande utente</td>
             <td>hashed 1024 + lexical 0.5 · p100</td>
             <td>16/20 · recall@10 0.80</td>
             <td>0.599167</td>
             <td class="review">review_required</td>
           </tr>
           <tr>
-            <td><strong>Natural 20Q</strong></td>
-            <td>hashed 1024 + lexical 0.5 · p100</td>
-            <td>18/20 · recall@20 0.90</td>
-            <td>0.606071</td>
+            <td><strong>Natural 20Q</strong><br>domande utente</td>
+            <td>ollama/nomic 768 + lexical 0.2 · p100</td>
+            <td>17/20 · recall@10 0.85</td>
+            <td>0.6225</td>
+            <td class="review">review_required</td>
+          </tr>
+          <tr>
+            <td><strong>Natural 20Q</strong><br>top-20 retrieval</td>
+            <td>ollama/nomic 768 + lexical 0.3 · p100</td>
+            <td><span class="winner">19/20 · recall@20 0.95</span></td>
+            <td><span class="winner">0.651716</span></td>
             <td class="review">review_required</td>
           </tr>
           <tr>
@@ -113,6 +120,13 @@
             <td>hashed 1024 + lexical 0.5 · p100</td>
             <td><span class="winner">20/20 · recall@5 1.00</span></td>
             <td><span class="winner">0.916667</span></td>
+            <td class="winner">pass</td>
+          </tr>
+          <tr>
+            <td><strong>Grounded 20Q</strong></td>
+            <td>ollama/nomic 768 + lexical 0.3 · p100</td>
+            <td><span class="winner">20/20 · recall@5 1.00</span></td>
+            <td><span class="winner">0.875</span></td>
             <td class="winner">pass</td>
           </tr>
         </tbody>
@@ -167,7 +181,7 @@
         </div>
         <div class="method-card">
           <h3>Limite dichiarato</h3>
-          <p>Quattro query naturali restano <code>review_required</code>: il corpus storico richiede reranking/query expansion e revisione degli expected.</p>
+          <p>Una query naturale resta <code>review_required</code> a top20 nel profilo Ollama: il corpus storico richiede reranking/query expansion e revisione degli expected.</p>
         </div>
       </div>
     </section>
