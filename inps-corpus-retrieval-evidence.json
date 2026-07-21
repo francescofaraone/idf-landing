@@ -1,61 +1,43 @@
 {
   "artifact": "IDF INPS Corpus Retrieval Evidence",
   "corpus": {
-    "deduplicated_chunks": 1548,
-    "input_documents": 600,
+    "deduplicated_chunks": 2941,
+    "input_documents": 1100,
     "quality_status": "ready",
     "source": "INPS circolari e messaggi",
     "technical_shape": "jsonl/parquet/rag-ready/training-gated",
-    "training_blocked_chunks": 1548,
-    "training_blocked_documents": 550,
+    "training_blocked_chunks": 2941,
+    "training_blocked_documents": 1050,
     "training_eligible_chunks": 0,
     "training_eligible_documents": 0,
     "training_status": "blocked_until_rights_review",
-    "unique_documents": 550
+    "unique_documents": 1050
   },
   "evals": {
-    "grounded_hashed_hybrid": {
+    "grounded_hashed_top5": {
       "failed": 0,
-      "mrr": 0.95,
+      "mrr": 0.916667,
       "passed": 20,
       "queries": 20,
       "recall_at_k": 1.0,
       "status": "pass",
       "top_k": 5
     },
-    "grounded_ollama_hybrid": {
-      "failed": 0,
-      "mrr": 0.941667,
-      "passed": 20,
+    "natural_hashed_top10": {
+      "failed": 4,
+      "mrr": 0.599167,
+      "passed": 16,
       "queries": 20,
-      "recall_at_k": 1.0,
-      "status": "pass",
-      "top_k": 5
-    },
-    "natural_hashed_hybrid_top10": {
-      "failed": 2,
-      "mrr": 0.702083,
-      "passed": 18,
-      "queries": 20,
-      "recall_at_k": 0.9,
+      "recall_at_k": 0.8,
       "status": "review_required",
       "top_k": 10
     },
-    "natural_ollama_hybrid_top10": {
+    "natural_hashed_top20": {
       "failed": 2,
-      "mrr": 0.79375,
+      "mrr": 0.606071,
       "passed": 18,
       "queries": 20,
       "recall_at_k": 0.9,
-      "status": "review_required",
-      "top_k": 10
-    },
-    "natural_ollama_hybrid_top20": {
-      "failed": 1,
-      "mrr": 0.759167,
-      "passed": 19,
-      "queries": 20,
-      "recall_at_k": 0.95,
       "status": "review_required",
       "top_k": 20
     }
@@ -115,36 +97,25 @@
   "generated_at": "2026-07-21",
   "indexes": {
     "hashed_hybrid": {
+      "corpus_checkpoint": "p100",
       "dimensions": 1024,
       "embedding": "deterministic_hashed_bow_v1",
       "lexical_weight": 0.5,
-      "vector_store": "local"
-    },
-    "ollama_nomic_hybrid_top10": {
-      "dimensions": 768,
-      "embedding": "ollama_embed_v1",
-      "embedding_model": "nomic-embed-text:latest",
-      "lexical_weight": 0.2,
-      "note": "Local Ollama endpoint; chunk text truncated to 2000 chars for embedding context safety.",
-      "vector_store": "local"
-    },
-    "ollama_nomic_hybrid_top20": {
-      "dimensions": 768,
-      "embedding": "ollama_embed_v1",
-      "embedding_model": "nomic-embed-text:latest",
-      "lexical_weight": 0.3,
       "vector_store": "local"
     }
   },
   "known_failures": {
     "natural_top10_hashed": [
       "ammortizzatore unico emergenze alluvionali / DL 25/2026",
-      "Fondo pensione Espero lavoratori scuola"
+      "Fondo pensione Espero lavoratori scuola",
+      "two additional p100 natural queries require review"
     ],
-    "natural_top10_ollama_hybrid": [
-      "Assegno di inclusione per permesso di soggiorno casi speciali",
-      "Campagna RedEst residenti estero 2026"
+    "natural_top20_hashed": [
+      "two p100 natural queries remain outside top20"
     ]
+  },
+  "notes": {
+    "semantic_rebuild": "Not published for p100; hashed baseline is the verified public checkpoint. Earlier p50 semantic metrics are not carried forward to avoid mixing corpus revisions."
   },
   "public_page": "https://francescofaraone.github.io/idf-landing/inps-corpus-retrieval-evidence.html",
   "rights": {

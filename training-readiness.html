@@ -54,10 +54,10 @@
     <section>
       <h2>Stato corpus</h2>
       <div class="matrix">
-        <div class="tile"><div class="value">550</div><div class="label">documenti INPS ufficiali unici</div></div>
-        <div class="tile"><div class="value">1548</div><div class="label">chunk deduplicati</div></div>
-        <div class="tile"><div class="value">3.1MB</div><div class="label">Parquet locale generato</div></div>
-        <div class="tile"><div class="value">12</div><div class="label">run combinati dal corpus gate</div></div>
+        <div class="tile"><div class="value">1050</div><div class="label">documenti INPS ufficiali unici</div></div>
+        <div class="tile"><div class="value">2941</div><div class="label">chunk deduplicati</div></div>
+        <div class="tile"><div class="value">5.8MB</div><div class="label">Parquet locale generato</div></div>
+        <div class="tile"><div class="value">22</div><div class="label">run combinati dal corpus gate</div></div>
         <div class="tile"><div class="value">ready</div><div class="label">quality_status</div></div>
         <div class="tile"><div class="value">0</div><div class="label">training eligible records</div></div>
       </div>
@@ -69,9 +69,9 @@
         <thead><tr><th>Campo</th><th>Valore</th><th>Interpretazione</th></tr></thead>
         <tbody>
           <tr><td>training_eligible_documents</td><td>0</td><td>Tutti i documenti bloccati fino a rights review.</td></tr>
-          <tr><td>training_blocked_documents</td><td>550</td><td>Asset tecnico disponibile, autorizzazione non implicita.</td></tr>
+          <tr><td>training_blocked_documents</td><td>1050</td><td>Asset tecnico disponibile, autorizzazione non implicita.</td></tr>
           <tr><td>training_eligible_chunks</td><td>0</td><td>Nessun chunk usabile per training pubblico.</td></tr>
-          <tr><td>training_blocked_chunks</td><td>1548</td><td>Può servire per RAG/eval interno rights-aware.</td></tr>
+          <tr><td>training_blocked_chunks</td><td>2941</td><td>Può servire per RAG/eval interno rights-aware.</td></tr>
           <tr><td>blocked_reason</td><td>blocked_until_rights_review</td><td>Fail-closed by design.</td></tr>
         </tbody>
       </table>
@@ -82,7 +82,7 @@
       <div class="checklist">
         <div class="check"><span class="ok">✓</span> <strong>Discovery controllata</strong> — RSS + archive search API, lotti manuali p5→p50, nessuno scheduler archive automatico.</div>
         <div class="check"><span class="ok">✓</span> <strong>Provenance</strong> — source URL e document title preservati per ogni documento.</div>
-        <div class="check"><span class="ok">✓</span> <strong>Deduplica</strong> — 600 input docs → 550 documenti unici; 1698 chunk input → 1548 accettati.</div>
+        <div class="check"><span class="ok">✓</span> <strong>Deduplica</strong> — 600 input docs → 1050 documenti unici; 1698 chunk input → 2941 accettati.</div>
         <div class="check"><span class="ok">✓</span> <strong>Formato training-shaped</strong> — JSONL, Parquet, manifest, quality report, sample review, RAG-only JSONL.</div>
         <div class="check"><span class="ok">✓</span> <strong>Eval retrieval</strong> — natural 20Q e grounded 20Q su hashed/Ollama hybrid.</div>
         <div class="check"><span class="block">!</span> <strong>Rights review</strong> — passaggio mancante per autorizzare training o redistribuzione.</div>
@@ -91,7 +91,7 @@
 
     <section>
       <h2>Come venderlo senza mentire</h2>
-      <p>Frase corretta: “Abbiamo una pipeline che produce un corpus INPS training-shaped e RAG-ready, con 550 documenti ufficiali, 1548 chunk, deduplica e retrieval eval. Il training è bloccato finché non completiamo rights review o lavoriamo customer-side in ambiente autorizzato.”</p>
+      <p>Frase corretta: “Abbiamo una pipeline che produce un corpus INPS training-shaped e RAG-ready, con 1050 documenti ufficiali, 2941 chunk, deduplica e retrieval eval. Il training è bloccato finché non completiamo rights review o lavoriamo customer-side in ambiente autorizzato.”</p>
       <p>Frase da evitare: “Dataset INPS pronto per addestrare un LLM pubblico”. Non è ancora difendibile.</p>
     </section>
   </main>
