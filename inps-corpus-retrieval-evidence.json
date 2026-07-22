@@ -32,6 +32,26 @@
       "status": "pass",
       "top_k": 5
     },
+    "natural_hashed_expanded_top10": {
+      "failed": 2,
+      "mrr": 0.658333,
+      "passed": 18,
+      "queries": 20,
+      "query_expansion": true,
+      "recall_at_k": 0.9,
+      "status": "review_required",
+      "top_k": 10
+    },
+    "natural_hashed_expanded_top20": {
+      "failed": 1,
+      "mrr": 0.661667,
+      "passed": 19,
+      "queries": 20,
+      "query_expansion": true,
+      "recall_at_k": 0.95,
+      "status": "review_required",
+      "top_k": 20
+    },
     "natural_hashed_top10": {
       "failed": 4,
       "mrr": 0.599167,
@@ -128,6 +148,8 @@
       "dimensions": 1024,
       "embedding": "deterministic_hashed_bow_v1",
       "lexical_weight": 0.5,
+      "query_expansion": true,
+      "query_expansion_aliases": "conservative Italian INPS aliases",
       "vector_store": "local"
     },
     "ollama_nomic_hybrid": {
@@ -138,6 +160,7 @@
       "lexical_weight_top10": 0.2,
       "lexical_weight_top20": 0.3,
       "note": "Local Ollama index built successfully on 2941 chunks.",
+      "query_expansion": false,
       "vector_store": "local"
     }
   },
@@ -157,6 +180,7 @@
     ]
   },
   "notes": {
+    "query_expansion": "Optional conservative aliases improved hashed p100; disabled for Ollama comparison because it did not improve that profile.",
     "semantic_rebuild": "Not published for p100; hashed baseline is the verified public checkpoint. Earlier p50 semantic metrics are not carried forward to avoid mixing corpus revisions."
   },
   "public_page": "https://francescofaraone.github.io/idf-landing/inps-corpus-retrieval-evidence.html",

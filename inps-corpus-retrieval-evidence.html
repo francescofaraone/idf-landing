@@ -82,7 +82,7 @@
       <ul class="features">
         <li><div><strong>Corpus verificabile</strong> — 1050 documenti unici e 2941 chunk deduplicati prodotti da run locali con provenance URL.</div></li>
         <li><div><strong>Retrieval misurato</strong> — eval naturale da 20 query, con più documenti attesi quando più atti sono validi.</div></li>
-        <li><div><strong>Failure analysis inclusa</strong> — tre query naturali restano fuori top 10 nel profilo Ollama p100: vengono dichiarate, non nascoste.</div></li>
+        <li><div><strong>Failure analysis inclusa</strong> — Due query naturali restano fuori top 10 nel profilo hashed p100 anche dopo query expansion: vengono dichiarate, non nascoste.</div></li>
         <li><div><strong>Diritti conservativi</strong> — nessuna redistribuzione dei testi trasformati e nessun training finché non c’è rights review.</div></li>
       </ul>
     </section>
@@ -96,9 +96,9 @@
         <tbody>
           <tr>
             <td><strong>Natural 20Q</strong><br>domande utente</td>
-            <td>hashed 1024 + lexical 0.5 · p100</td>
-            <td>16/20 · recall@10 0.80</td>
-            <td>0.599167</td>
+            <td>hashed 1024 + lexical 0.5 + query expansion · p100</td>
+            <td>18/20 · recall@10 0.90</td>
+            <td>0.658333</td>
             <td class="review">review_required</td>
           </tr>
           <tr>
@@ -131,7 +131,7 @@
           </tr>
         </tbody>
       </table>
-      <p class="small-note">Il corpus p100 aumenta la copertura ma rende più difficile il natural retrieval: il grounded eval resta 20/20, mentre le query naturali richiedono reranking e query expansion.</p>
+      <p class="small-note">Il corpus p100 aumenta la copertura. La query expansion migliora il profilo hashed, mentre Ollama resta il confronto semantico separato: il grounded eval resta 20/20.</p>
     </section>
 
     <section>
